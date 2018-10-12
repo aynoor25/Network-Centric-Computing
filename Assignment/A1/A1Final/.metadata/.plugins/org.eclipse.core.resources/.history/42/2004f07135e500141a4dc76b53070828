@@ -1,0 +1,14 @@
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class GlobalVariables {
+	public static List<Files> clientsPresent = new ArrayList<Files>();
+	///static Client[] clientsPresent = new Client[5];
+	static int client_server_port = 4322;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

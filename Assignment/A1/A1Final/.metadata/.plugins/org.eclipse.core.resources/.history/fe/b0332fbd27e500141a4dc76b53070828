@@ -1,0 +1,84 @@
+// To run: java Client <IP> <port>
+// e.g. java Client localhost 8822
+
+import java.util.*;
+import java.net.*;
+import java.io.*;
+
+public class Client {
+	List<String> files;
+	static int clientID = 0;
+	Client(int id) {
+		files  = new ArrayList<String>();
+		clientID = id;
+	}
+	public static void main(String args[]) {
+		// Takes command line arguments
+		int port = Integer.parseInt(args[1]);
+		String ip = args[0];
+		int client_port = Integer.parseInt(args[2]);
+		Admin client_server = new Admin(client_port);
+		int cases = 0;
+		try {
+			// Connect to the given IP and Port and store in the sock variable
+			Socket sock = new Socket(ip, port);
+			System.out.println("Connected to server.");
+			// Send it's listening port number to server as an unique ID
+			PrintWriter pw = new PrintWriter(sock.getOutputStream(), true);
+			pw.println(client_port);
+			pw.flush();
+			
+			// Taking input from socket
+			InputStreamReader isr = new InputStreamReader(sock.getInputStream());
+			BufferedReader br = new BufferedReader(isr);
+			
+			// Choose from the options provided by client
+			System.out.println(br.readLine());
+			System.out.println(br.readLine());
+			System.out.println(br.readLine());
+			System.out.println(br.readLine());
+			System.out.println("hi");
+			// Input options from console
+			while (true) {
+				System.out.println("Choose an option: ");
+				BufferedReader clientInput = new BufferedReader(new InputStreamReader(System.in));
+				String send_option_to_server = clientInput.readLine();
+				
+				pw.println(send_option_to_server);		// sending case to server
+				pw.flush();
+				System.out.println("send");
+				if (send_option_to_server!= "") {
+					cases = Integer.parseInt(send_option_to_server);
+				} else {cases = 0;}
+				switch (cases) {
+				case 1:
+					// taking input from client
+					System.out.println("Please enter file name: ");
+					String fileName = clientInput.readLine();
+					System.out.println("Please enter data: ");
+					String data = clientInput.readLine();
+					// Creating the file
+					PrintWriter out = new PrintWriter("/home/aynoor/Documents/Semester6/CS 382/AA1/Assign1/src/" + filename+".txt");
+					PrintWriter newFile = new PrintWriter(fileName+".txt");
+					newFile.println(data);
+					newFile.close();
+					// passing variables to the server
+					pw.println(fileName);
+					pw.println(data);
+					pw.println(Integer.toString(clientID));
+					pw.flush();
+					break;
+				default:
+					System.out.println("Invalid option.");
+					break;
+				}
+			}
+			
+			
+		} catch (Exception e) {
+			// Exception printed on console in case of error
+			e.printStackTrace();
+		}
+	}
+
+}

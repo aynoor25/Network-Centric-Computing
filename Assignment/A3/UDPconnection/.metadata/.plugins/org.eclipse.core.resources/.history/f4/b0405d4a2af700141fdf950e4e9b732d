@@ -1,0 +1,21 @@
+
+import java.io.*;
+import java.net.*;
+public class client {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		DatagramSocket skt;
+		try {
+			skt = new DatagramSocket();
+			String msg = "test message";
+			
+			
+		} catch(Exception e) {
+			
+		}
+		
+	}
+
+}

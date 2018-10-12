@@ -1,0 +1,147 @@
+// To run: java Client <IP> <port>
+// e.g. java Client localhost 8822
+
+import java.util.*;
+import java.net.*;
+import java.io.*;
+
+public class Client {
+	List<String> files;
+	static int clientID = 0;
+	Client(int id) {
+		files  = new ArrayList<String>();
+		clientID = id;
+	}
+	public static void main(String args[]) {
+		// Takes command line arguments
+		int port = Integer.parseInt(args[1]);
+		String ip = args[0];
+		int client_port = Integer.parseInt(args[2]);
+		Admin client_server = new Admin(client_port);
+		int cases = 0;
+		try {
+			// Connect to the given IP and Port and store in the sock variable
+			Socket sock = new Socket(ip, port);
+			System.out.println("Connected to server.");
+			// Send it's listening port number to server as an unique ID
+			PrintWriter pw = new PrintWriter(sock.getOutputStream(), true);
+			pw.println(client_port);
+			pw.flush();
+			
+			// Taking input from socket
+			InputStreamReader isr = new InputStreamReader(sock.getInputStream());
+			BufferedReader br = new BufferedReader(isr);
+			
+			// Choose from the options provided by client
+			System.out.println(br.readLine());
+			System.out.println(br.readLine());
+			System.out.println(br.readLine());
+			System.out.println(br.readLine());
+			System.out.println(br.readLine());
+			System.out.println("hi");
+			// Input options from console
+			while (true) {
+				System.out.println("Choose an option: ");
+				BufferedReader clientInput = new BufferedReader(new InputStreamReader(System.in));
+				String send_option_to_server = clientInput.readLine();
+				
+				pw.println(send_option_to_server);		// sending case to server
+				pw.flush();
+				if (send_option_to_server!= "") {
+					// If user inputs a string and not numbers for choice
+					try {
+						cases = Integer.parseInt(send_option_to_server);
+					} catch (Exception e) {
+						cases = 0;
+					}
+				} else {cases = 0;}
+				switch (cases) {
+				case 1:
+					// taking input from client
+					System.out.println("Please enter file name: ");
+					String fileName = clientInput.readLine();
+					System.out.println("Please enter data: ");
+					String data = clientInput.readLine();
+					// Creating the file
+					PrintWriter newFile = new PrintWriter("/home/aynoor/Documents/Semester6/CS 382/AA1/Assign1/src/"+ Integer.toString(client_port)+"/" + fileName+".txt");
+					//PrintWriter newFile = new PrintWriter(fileName+".txt");
+					newFile.println(data);
+					newFile.close();
+					// passing variables to the server
+					pw.println(fileName);
+					pw.println(Integer.toString(client_port));
+					pw.flush();
+					break;
+				case 2:
+					System.out.println("Please enter the name of file to search: ");
+					String filename = clientInput.readLine();
+					pw.println(filename);
+					pw.flush();	
+					String fileFound = br.readLine();
+					if (fileFound.equals("File found")){
+						System.out.println("File found with client "+ br.readLine());
+					} else {
+						System.out.println(fileFound);
+					}
+					//System.out.println("Out of case 3");
+					break;
+				case 3:
+					System.out.println("Please enter the name of file to search: ");
+					String file_name = clientInput.readLine();
+					pw.println(file_name);
+					pw.println(Integer.toString(client_port));
+					pw.flush();
+					String client_id = br.readLine();
+					if (client_id.equals("File not found")) {
+						System.out.println("File not found with any client.");
+						client_id = null;
+					}
+					if (client_id == null) {}
+					else {
+						if (client_id.equals(Integer.toString(client_port))) {
+							System.out.println("Already have the file.");
+						} else {
+							Socket clients_sock = new Socket(ip, Integer.parseInt(client_id));
+							PrintWriter _pw = new PrintWriter(clients_sock.getOutputStream(), true);
+							_pw.println(file_name);
+							_pw.flush();
+							try {
+								String fileOutput = "/home/aynoor/Documents/Semester6/CS 382/AA1/Assign1/src/"+ Integer.toString(client_port)+"/" + file_name+".txt";
+								byte[] one_byte = new byte[1];
+								int bytesRead;
+								InputStream in_stream = clients_sock.getInputStream();
+								ByteArrayOutputStream array_output_stream = new ByteArrayOutputStream();
+								FileOutputStream file_output_stream = new FileOutputStream( fileOutput );
+								BufferedOutputStream b_output_stream = new BufferedOutputStream(file_output_stream);
+
+								bytesRead = in_stream.read(one_byte, 0, one_byte.length);
+								do {
+									array_output_stream.write(one_byte);
+									bytesRead = in_stream.read(one_byte);
+								} while (bytesRead != -1);
+
+								b_output_stream.write(array_output_stream.toByteArray());
+								b_output_stream.flush();
+								b_output_stream.close();
+								array_output_stream.close();
+							} catch (Exception e) {
+								// Exception printed on console in case of error
+								e.printStackTrace();
+							}
+						}
+				}
+				break;
+				default:
+					System.out.println("Invalid option.");
+					break;
+				}
+			}
+			
+			
+		} catch (Exception e) {
+			// Exception printed on console in case of error
+			e.printStackTrace();
+		}
+	}
+
+}

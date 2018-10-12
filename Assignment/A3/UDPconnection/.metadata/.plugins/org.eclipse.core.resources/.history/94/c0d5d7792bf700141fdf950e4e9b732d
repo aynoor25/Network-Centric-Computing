@@ -1,0 +1,21 @@
+
+import java.io.*;
+import java.net.*;
+
+public class server {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		DatagramSocket skt = null;
+		try {
+			skt = new DatagramSocket(5000); 
+			
+			
+		} catch(Exception e) {
+			
+		}
+		
+	}
+
+}

@@ -1,0 +1,16 @@
+import java.util.List;
+
+
+public class Files {
+	List<String> files;
+	static int clientID = 0;
+	Files(int id) {
+		files  = new ArrayList()<>;
+		client_id = id;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,19 @@
+public class Run {
+	public static void main(String args[]) {
+		Worker w = new Worker();
+		Admin a = new Admin();
+		Thread t1 = new Thread(w);
+		Thread t2 = new Thread(a);
+		try {
+			// Starting the thread execution
+			t1.start();
+			t2.start();
+			
+			// Waiting for all threads to finish before terminating the main thread
+			t1.join();
+			t2.join();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

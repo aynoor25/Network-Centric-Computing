@@ -1,0 +1,80 @@
+// To run: java Server <port>
+// e.g. java Server 8822
+
+import java.util.*;
+import java.net.*;
+import java.io.*;
+
+public class Server {
+	//List<Client> clientsPresent = new ArrayList<Client>();
+	public static List<String> clientsPresent = new LinkedList<String>();
+	public static void main(String args[]) {
+		// Port number taken from command line and converted to integer
+		int port = Integer.parseInt(args[0]);
+		int clientID = 1;
+		try {
+			// Start listening for connection on the specified port
+			ServerSocket server = new ServerSocket(port);
+			System.out.println("Starting server.");
+			int cases = 0;
+			while (true) {
+				// The following is a blocking call
+				Socket client_socket = server.accept();
+
+				// Send message to the connected client
+				PrintWriter pw = new PrintWriter(client_socket.getOutputStream(), true);
+				pw.println("Hello from server.");
+				pw.println("Please choose from the following options:");
+				pw.println("1. Press 1 to lookup a file");
+				pw.println("2. Press 2 to place a new file.");
+				pw.flush();
+				
+				
+				// Read message from the client
+				InputStreamReader isr = new InputStreamReader(client_socket.getInputStream());
+				BufferedReader br = new BufferedReader(isr);
+				// Check if client registered or not
+				String id_from_client = br.readLine();
+				if (check_if_registered(id_from_client) == false) {
+					addClient(Integer.parseInt(id_from_client));
+				}
+				// check client's chosen option IF clients connected
+				String read_case_from_client = br.readLine();
+				if ((read_case_from_client = br.readLine()) != null) {
+					cases = Integer.parseInt(read_case_from_client);
+				}
+				
+				// Response of clients chosen option
+				switch (cases) {
+				case 1:
+					
+				}
+					
+				String line;
+				while ((line = br.readLine()) != null) {
+					System.out.println("Message from client: " + line);
+				}
+				
+			}
+		} catch (Exception e) {
+			// Exception printed on console in case of error
+			e.printStackTrace();
+		}
+	}
+	
+	public static boolean check_if_registered(String client_id) {
+		for (int i = 0; i < clientsPresent.size(); i++) {
+			if (clientsPresent.get(i).equals(client_id)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public static  void addClient(int clientID) {
+		clientsPresent.add(Integer.toString(clientID));
+		for (int i = 0; i < clientsPresent.size(); i++) {
+			System.out.println(clientsPresent.get(i));
+		}
+	}
+}

@@ -1,0 +1,21 @@
+import java.net.Socket;
+
+
+public class client_Workers implements Runnable {
+	Socket client_socket;
+	client_Workers(Socket sock) {
+		client_socket = sock;
+	}
+	
+	public void run() {
+		
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

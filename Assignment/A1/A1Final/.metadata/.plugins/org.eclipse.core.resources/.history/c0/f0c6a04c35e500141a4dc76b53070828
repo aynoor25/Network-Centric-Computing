@@ -1,0 +1,57 @@
+// To run: java Server <port>
+// e.g. java Server 8822
+
+import java.util.*;
+import java.net.*;
+import java.io.*;
+
+public class Server {
+	//List<Client> clientsPresent = new ArrayList<Client>();
+	public static List<String> clientsPresent = new LinkedList<String>();
+	// contains file followed by the id of client that has that file
+	public static List<String> filesPresent = new LinkedList<String>();
+	public static void main(String args[]) {
+		// Port number taken from command line and converted to integer
+		int port = Integer.parseInt(args[0]);
+		try {
+			// Start listening for connection on the specified port
+			ServerSocket server = new ServerSocket(port);
+			System.out.println("Starting server.");
+			Thread _t = new Thread(new Worker(server.accept()));
+			_t.start();
+		} catch (Exception e) {
+			// Exception printed on console in case of error
+			e.printStackTrace();
+		}
+	}
+	
+	public static boolean check_if_registered(String client_id) {
+		for (int i = 0; i < clientsPresent.size(); i++) {
+			if (clientsPresent.get(i).equals(client_id)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public static  void addClient(int clientID) {
+		clientsPresent.add(Integer.toString(clientID));
+		/*for (int i = 0; i < clientsPresent.size(); i++) {
+			System.out.println(clientsPresent.get(i));
+		}*/
+	}
+	public static void addFile(String file_name, String client_id) {
+		filesPresent.add(file_name);
+		filesPresent.add(client_id);
+	}
+	
+	public static String lookup(String file_name) {
+		for (int i = 0; i < filesPresent.size(); i = i+2) {
+			if (filesPresent.get(i).equals(file_name)) {
+				return filesPresent.get(i+1);
+			}
+		}
+		return null;
+	}
+	
+}

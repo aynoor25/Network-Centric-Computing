@@ -1,0 +1,32 @@
+
+import java.io.*;
+import java.net.*;
+public class client {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		DatagramSocket skt;
+		try {
+			skt = new DatagramSocket();
+			String msg = "test message";
+			
+			// to send this message it is converted to bytes
+			
+			byte [] b = msg.getBytes();
+			
+			InetAddress host = InetAddress.getByName("localhost");
+			int serverSocket = 5000;
+			
+			DatagramPacket  request = new DatagramPacket(b, b.length, host, serverSocket);
+			
+			// use the socket to send the packet
+			
+			
+		} catch(Exception e) {
+			
+		}
+		
+	}
+
+}

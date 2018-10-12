@@ -1,0 +1,1 @@
+First server checks if the client is already registered. If not it registers the client.

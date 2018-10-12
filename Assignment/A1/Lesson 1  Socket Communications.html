@@ -1,0 +1,2409 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0057)http://www.oracle.com/technetwork/java/socket-140484.html -->
+<html class="hasjs haspushstate"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script type="text/javascript" async="" src="./Lesson 1  Socket Communications_files/elqCfg.min.js"></script><script type="text/javascript">
+   var _U = "undefined";
+   var g_HttpRelativeWebRoot = "/ocom/";
+   var SSContributor = false;
+   var SSForceContributor = false;
+   var SSHideContributorUI = false;
+   var ssUrlPrefix = "/technetwork/";
+   var ssUrlType = "2";
+   
+   var g_navNode_Path = new Array();
+       g_navNode_Path[0] = 'otnen';
+       g_navNode_Path[1] = 'otnen_java';
+   var g_ssSourceNodeId = "otnen_java";
+   var g_ssSourceSiteId = "otnen";
+</script>
+
+
+  <script id="ssInfo" type="text/xml" warning="DO NOT MODIFY!">
+  <ssinfo >
+    <fragmentinstance  id="fragment14" fragmentid="Universal_Localization_Fragment" library="server:UNIVERSAL_LOCALIZATION_FRAG">
+    </fragmentinstance>
+    <fragmentinstance  id="fragment16" fragmentid="Universal_Localization_Fragment" library="server:UNIVERSAL_LOCALIZATION_FRAG">
+    </fragmentinstance>
+    <fragmentinstance  id="fragment17" fragmentid="Universal_Localization_Fragment" library="server:UNIVERSAL_LOCALIZATION_FRAG">
+    </fragmentinstance>
+    <fragmentinstance  id="fragment18" fragmentid="universal-search-fragment" library="server:UNIVERSAL-SEARCH-FRAGMET-LIB">
+      
+    </fragmentinstance>
+    <fragmentinstance  id="fragment22" fragmentid="Universal_Localization_Fragment" library="server:UNIVERSAL_LOCALIZATION_FRAG">
+    </fragmentinstance>
+    <fragmentinstance  id="fragment23" fragmentid="ocom-commonassets" library="server:OCOM-FRAGMENT-LIBRARAY">
+      
+    </fragmentinstance>
+    <fragmentinstance  id="fragment24" fragmentid="ExternalNavigationHorizontal" library="server:EXTERNALNAVHORIZONTALLIB">
+    </fragmentinstance>
+    <fragmentinstance  id="fragment25" fragmentid="ExternalNavVertical" library="server:EXTERNAL_NAV_VERTICAL">
+    </fragmentinstance>
+    <fragmentinstance  id="fragment27" fragmentid="Universal_Localization_Fragment" library="server:UNIVERSAL_LOCALIZATION_FRAG">
+    </fragmentinstance>
+    <fragmentinstance  id="fragment28" fragmentid="Universal_Localization_Fragment" library="server:UNIVERSAL_LOCALIZATION_FRAG">
+    </fragmentinstance>
+    <fragmentinstance  id="fragment29" fragmentid="ExternalBreadCrumb" library="server:EXTERNAL_BREADCRUMB">
+    </fragmentinstance>
+    <fragmentinstance  id="fragment32" fragmentid="universal-metatag" library="server:UNIVERSAL-FRAGMENTS">
+    </fragmentinstance>
+    <fragmentinstance  id="fragment33" fragmentid="ExternalNavTabsTop" library="server:EXTERNAL_NAV_TABS_TOP">
+    </fragmentinstance>
+    <fragmentinstance  id="fragment35" fragmentid="universal-webcache-integration" library="server:UNIVERSAL-WEBCACHE-INTEGRATION">
+      
+    </fragmentinstance>
+    <fragmentinstance  id="fragment37" fragmentid="Universal_Localization_Fragment" library="server:UNIVERSAL_LOCALIZATION_FRAG">
+    </fragmentinstance>
+    <fragmentinstance  id="fragment38" fragmentid="universal-addthis-print-email" library="server:UNIVERSAL-FRAGMENTS">
+      
+    </fragmentinstance>
+    <fragmentinstance  id="fragment39" fragmentid="sitecatalyst-otn-standard" library="server:SITECATALYST-OTN-STANDARD">
+      
+    </fragmentinstance>
+    <fragmentinstance  id="fragment40" fragmentid="universal-addthis-print-email" library="server:UNIVERSAL-FRAGMENTS">
+      
+    </fragmentinstance>
+      <fragmentinstance  id="fragment41" fragmentid="mosaic-header-content" library="server:MOSAIC-HEADER-CONTENT">
+        
+      </fragmentinstance>
+      <fragmentinstance  id="fragment42" fragmentid="ocomheader" library="server:OCOMHEADER">
+        
+      </fragmentinstance>
+      <fragmentinstance  id="fragment43" fragmentid="ocomfooter" library="server:OCOMFOOTER">
+        
+      </fragmentinstance>
+      <fragmentinstance  id="fragment44" fragmentid="ocom-commonassets" library="server:OCOM-FRAGMENT-LIBRARAY">
+        
+      </fragmentinstance>
+  </ssinfo>
+  </script>
+
+  
+  
+
+
+  <style type="text/css">
+  #u06v1 li{
+    font-size: 11px;
+}
+    HTML,BODY,TD,H1,H2,H3,H4,OL,UL,DL,LI,DT,DD {font-family:arial,helvetica,sans-serif;}
+    HTML,BODY,TD,CODE,KBD,TT,OL,UL,DL,LI,DT,DD {font-size:12px;}
+    a:link {color:#000;text-decoration:none;}
+    a:visited {color:#000;text-decoration:none;}
+    a:hover {color:#FF0000;text-decoration:underline;}
+
+    #Wrapper_FixedWidth {text-align: left; margin: 0px auto; padding: 0px; border:0; width: 1000px;}
+    #Wrapper_FixedWidth_Header {margin: 0 0 15px 0; width:100%; display:block; }
+    #Wrapper_FixedWidth_Leftnav {float: left; width: 181px;}
+    #Wrapper_FixedWidth_Rightnav {float: right;  width: 185px; }
+    #Wrapper_FixedWidth_Centercontent {float: left; width: 810px;}
+    #Wrapper_FixedWidth_Maincontent {float: left; width: 595px;}
+    #Wrapper_FixedWidth_Footer{ clear: both; }
+    .header{display:block; width:100%; padding:2px 0px 5px 0px; margin:0px 0px 10px 0px;}
+    .logo{width:140px; float:left; padding:12px 0px 0px 12px;}
+    .welcomeMsg{text-align:right; font-size:10px; padding:5px 12px 0px 0px; float:right;}
+    .secureSearch{text-align:right; padding:10px 0px 0px 0px; margin-top:20px;}
+    .greybarhomebot{background: #DCDCDC;height: 7px; margin-top: 7px; float:left; width:100%; margin-top:20px;}
+    .footerLinks {font-size:10px;}
+    .sngPsta {font-size:11px;line-height:13px;color:#000;text-align:left;}
+    a.sngPsta:link {color:#000;text-decoration:none;display:block;padding:3px 10px;}
+    a.sngPsta:visited {color:#000;text-decoration:none;display:block;padding:3px 10px;}
+    a.sngPsta:hover {color:#fff;text-decoration:none;display:block;background-color:#9a9a9a;padding:3px 10px;}
+    /* For Mosaic */
+    ul#navigation li.top-level p a.noimg {background:none;}
+    /* For Mosaic */
+    #centerSectBlankPS {display: block;min-width: 570px;}
+    .lock {position:absolute; top:1px;*top:1px; left:152px; margin:0px; padding:0px;}
+  </style>
+
+  <!-- SS_BEGIN_SNIPPET(fragment44,ocom-commonassets-droppoint)-->
+				
+				
+			<!-- SS_END_SNIPPET(fragment44,ocom-commonassets-droppoint)-->  
+<!--SS_BEGIN_SNIPPET(fragment32,code)-->			<!--SS_END_SNIPPET(fragment32,code)-->
+
+  <style type="text/css">
+    <!-- Add logo class to styles.css file -->
+    .logo{FLOAT: left; WIDTH: 151px;  PADDING-TOP: 4px}
+    #centerSectBlankPS {display: block;min-width: 570px;}
+    .sunquicklinks_wrapper{DISPLAY: block; FLOAT: right; WIDTH: 200px; TEXT-ALIGN: right;}
+    .welcomesignin_wrapper{FLOAT: left; WIDTH: 634px; *width:621px; TEXT-ALIGN: right;VERTICAL-ALIGN: bottom; PADDING-TOP: 12px}
+    .logo_wrapper{DISPLAY: block; MARGIN-BOTTOM: 6px; float:left; WIDTH: 974px; HEIGHT: 40px;}
+	.menu-ocom {display:none;}
+	
+  </style><!--Mosaic Header --><!--[if IE]>
+  <STYLE>
+    .logo_align{margin-bottom: 4px; margin-left:0px;}
+    .search_position{margin:7px 3px 14px 16px;}
+    #panelDiv_search .contentBg{padding:15px 5px 5px 5px; } 
+    ul#navigation div.submenu {border-bottom:1px solid #b7b7b7;}
+    ul#navigation div.submenu .bottomleft{background:none; width:15px; height:30px; float:left;  margin-left:-16px; margin-bottom:-42px; }
+    ul#navigation div.submenu .bottomcenter{background:none; height:30px;  margin-left:15px; margin-right:15px; float:left; width:360px;} 
+    ul#navigation div.submenu .bottomright{background:none; width:15px; height:30px; float:left; margin-left:360px; }
+    ul#navigation div.submenu .partner_bottomleft{ background:none; width:15px; height:30px;  float:left; margin-left:-16px; margin-bottom:-42px; clear:left; margin-top:15px;}
+    ul#navigation div.submenu .partner_bottomcenter{  background:none; width:362px; height:30px; margin-left:15px;  float:center;}
+    ul#navigation div.submenu .partner_bottomright{  background:none; width:15px; height:30px; float:right; margin-right:-15px;}
+    </STYLE>
+  <![endif]-->
+<!--SS_BEGIN_SNIPPET(fragment29,1)--><!--SS_END_SNIPPET(fragment29,1)-->
+<!--SS_BEGIN_SNIPPET(fragment32,head_tags)-->
+
+
+												     
+     	
+
+
+
+
+	
+<title>Lesson 1: Socket Communications</title>
+<meta name="Title" content="Lesson 1: Socket Communications">
+<meta name="Description" content="Learn the basics of socket and multi-threaded programming.">
+<meta name="Keywords" content="">
+<meta name="robots" content="INDEX, FOLLOW">
+<meta name="country" content="USA">
+<meta name="Language" content="en">
+<meta name="Updated Date" content="1/29/13 7:04 PM">
+
+			<!--SS_END_SNIPPET(fragment32,head_tags)-->
+
+<!--SS_BEGIN_SNIPPET(fragment33,1)-->				<link rel="stylesheet" type="text/css" href="./Lesson 1  Socket Communications_files/receiver.css" media="screen">
+<link rel="stylesheet" type="text/css" href="./Lesson 1  Socket Communications_files/subtabs.css" media="screen">
+
+<script type="text/javascript" charset="utf-8" src="./Lesson 1  Socket Communications_files/receiver.js"></script>
+			<!--SS_END_SNIPPET(fragment33,1)-->
+
+<!--SS_BEGIN_SNIPPET(fragment35,code)-->
+			<!--SS_END_SNIPPET(fragment35,code)-->
+
+<!-- SS_BEGIN_SNIPPET(fragment44,ocom-commonassets)--><link rel="stylesheet" type="text/css" href="./Lesson 1  Socket Communications_files/ocom-mosaic.css">
+<link rel="stylesheet" type="text/css" href="./Lesson 1  Socket Communications_files/master-mosaic.css">
+<script language="JavaScript" type="text/javascript" src="./Lesson 1  Socket Communications_files/jquery.js"></script>
+<script language="JavaScript" type="text/javascript" src="./Lesson 1  Socket Communications_files/oraclelib-mosaic.js"></script>
+
+    <script type="text/javascript" src="./Lesson 1  Socket Communications_files/get" id="truste_0.3040286456234753"></script>
+<!--[if IE]>
+  <STYLE>
+    .logo_align{margin-bottom: 4px; margin-left:0px;}
+    .search_position{margin:7px 3px 14px 16px;}
+    #panelDiv_search .contentBg{padding:30px 5px 5px 5px; } 
+    ul#navigation div.submenu {border-bottom:1px solid #b7b7b7;}
+    ul#navigation div.submenu .bottomleft{background:none; width:15px; height:30px; float:left;  margin-left:-16px; margin-bottom:-42px; }
+    ul#navigation div.submenu .bottomcenter{background:none; height:30px;  margin-left:15px; margin-right:15px; float:left; width:380px;} 
+    ul#navigation div.submenu .bottomright{background:none; width:15px; height:30px; float:left; }
+    ul#navigation div.submenu .partner_bottomleft{ background:none; width:15px; height:30px;  float:left; margin-left:-16px; margin-bottom:-42px; clear:left; margin-top:15px;}
+	ul#navigation div.submenu .partner_bottomcenter{  background:none; width:382px; height:30px; margin-left:15px;  float:center;}
+	ul#navigation div.submenu .partner_bottomright{  background:none; width:15px; height:30px; float:right; margin-right:-15px;}
+  </STYLE>
+<![endif]-->
+<!--[if IE 6]>
+  <style>
+  #panelDiv_search .BottomleftCurv{background:none; width:15px; height:30px; float:left;}
+  #panelDiv_search .centerBottom{background:none;width:153px;height:30px;float:left;}
+  #panelDiv_search .BottomrightCurv{background:none;width:15px;height:30px;float:right;}
+  #panelDiv_search .contentBg{border-bottom:1px solid #ababab;}
+  #navigation{width:971px;}
+  </style>
+<![endif]-->
+ <!--Brightcove script line and lightbox code--> 
+</head><body class="f01 f01v0 f01bg"><div id="bcVideoPlayer" style="display: none;">&nbsp;</div>
+<div class="lightbox_overlay" id="lightbox_brightcove" onclick="showclose();" style="display: none; z-index: 30000;"><!--spacer-->&nbsp;</div>
+			<!-- SS_END_SNIPPET(fragment44,ocom-commonassets)--><script type="text/javascript" src="./Lesson 1  Socket Communications_files/6_S3_"></script>
+
+<a name="top"></a>
+	<div class="f01bg"></div>
+	<div class="f01v0w1">
+	
+ 	
+  <!-- SS_BEGIN_SNIPPET(fragment42,ocomheader)-->				
+		<!-- U01v0 -->
+<div data-menusrc="/us/mosaicmenu/index.html" id="u01" class="u01"><div class="u01mmenu"><a href="http://www.oracle.com/technetwork/java/socket-140484.html#menu">MENU</a></div><div class="u01mlogo"><a href="http://www.oracle.com/">Oracle</a></div><div class="u01msearch"><a href="http://www.oracle.com/technetwork/java/socket-140484.html#search">SEARCH</a></div>
+<div class="u01toolsw1"><div data-trackas="header" class="u01tools">
+<div class="u01logo"><a data-lbl="logo" href="http://www.oracle.com/"><span>Oracle</span></a></div>
+<ul class="u01navtools">
+    <li><a class="menu-otn" data-lbl="country" href="http://www.oracle.com/technetwork/java/socket-140484.html#otn-menu-countryselect">Country</a><div id="otn-menu-countryselect" class="u01toolmenu" data-trackas="header">
+
+<div class="u01w2" data-lbl="country">
+<div class="u01w3">
+<h5>Select a Country/Region</h5>
+<ul>
+    <li><a data-lbl="Brazil" href="http://www.oracle.com/technetwork/pt/index.html">Brazil</a></li>
+    <li><a data-lbl="China" href="http://www.oracle.com/technetwork/cn/index.html">China</a></li>
+    <li><a data-lbl="Japan" href="http://www.oracle.com/technetwork/jp/index.html">Japan</a></li>
+    <li><a data-lbl="Latin America" href="http://www.oracle.com/technetwork/es/index.html">Latin America</a></li>
+    <li><a data-lbl="Russia" href="http://www.oracle.com/technetwork/ru/index.html">Russia</a></li>
+    <li><a data-lbl="United States" href="http://www.oracle.com/technetwork/index.html">United States</a></li>
+</ul>
+</div>
+</div>
+</div></li>
+    <li><a class="menu-ocom menu-multicol" data-lbl="country" href="http://www.oracle.com/us/corporate/region/index.html">Country</a><div id="ocom-menu-countryselect" class="u01toolmenu menu-multicol" data-trackas="header">
+
+<div class="u01w2" data-lbl="country">
+<div class="u01w3">
+<h5>Select a Country/Region</h5>
+<ul>
+    <li><a data-lbl="africa" href="http://www.oracle.com/ao/index.html">Africa Operation</a></li>
+    <li><a data-lbl="argentina" href="http://www.oracle.com/lad/index.html">Argentina</a></li>
+    <li><a data-lbl="australia" href="http://www.oracle.com/au/index.html">Australia</a></li>
+    <li><a data-lbl="austria" href="http://www.oracle.com/at/index.html">Österreich</a></li>
+    <li><a data-lbl="bahrain" href="http://www.oracle.com/me/index.html">Bahrain</a></li>
+    <li><a data-lbl="bangladesh" href="http://www.oracle.com/as/corporate/contact/bangladesh-316183-en-as.html">Bangladesh</a></li>
+    <li><a data-lbl="belgium-and-luxembourg" href="http://www.oracle.com/be/index.html">Belgium &amp; Luxembourg</a></li>
+    <li><a data-lbl="belize" href="http://www.oracle.com/lad/index.html">Belice</a></li>
+    <li><a data-lbl="bhutan" href="http://www.oracle.com/as/corporate/contact/bhutan-316187-en-as.html">Bhutan</a></li>
+    <li><a data-lbl="bolivia" href="http://www.oracle.com/lad/index.html">Bolivia</a></li>
+    <li><a data-lbl="bosnia-and-herzegovina" href="http://www.oracle.com/ba/index.html">Bosna i Hercegovina</a></li>
+    <li><a data-lbl="brasil" href="http://www.oracle.com/br/index.html">Brasil</a></li>
+    <li><a data-lbl="brunei" href="http://www.oracle.com/as/corporate/contact/brunei-316198-en-as.html">Brunei</a></li>
+    <li><a data-lbl="bulgaria" href="http://www.oracle.com/bg/index.html">България</a></li>
+    <li><a data-lbl="cambodia" href="http://www.oracle.com/as/corporate/contact/cambodia-316193-en-as.html">Cambodia</a></li>
+    <li><a data-lbl="canada-english" href="http://www.oracle.com/ca-en/index.html">Canada - English</a></li>
+    <li><a data-lbl="canada-french" href="http://www.oracle.com/ca-fr/index.html">Canada - Français</a></li>
+    <li><a data-lbl="chile" href="http://www.oracle.com/lad/index.html">Chile</a></li>
+    <li><a data-lbl="china" href="http://www.oracle.com/cn/index.html">中国</a></li>
+    <li><a data-lbl="columbia" href="http://www.oracle.com/lad/index.html">Colombia</a></li>
+</ul>
+<ul>
+    <li><a data-lbl="costa-rica" href="http://www.oracle.com/lad/index.html">Costa Rica</a></li>
+    <li><a data-lbl="croatia" href="http://www.oracle.com/hr/index.html">Hrvatska</a></li>
+    <li><a data-lbl="cyprus" href="http://www.oracle.com/cy/index.html">Κύπρος</a></li>
+    <li><a data-lbl="czech-republic" href="http://www.oracle.com/cz/index.html">Česká Republika</a></li>
+    <li><a data-lbl="denmark" href="http://www.oracle.com/dk/index.html">Danmark</a></li>
+    <li><a data-lbl="ecuador" href="http://www.oracle.com/lad/index.html">Ecuador</a></li>
+    <li><a data-lbl="egypt" href="http://www.oracle.com/me/index.html">Egypt</a></li>
+    <li><a data-lbl="estonia" href="http://www.oracle.com/ee/index.html">Eesti</a></li>
+    <li><a data-lbl="finland" href="http://www.oracle.com/fi/index.html">Suomi</a></li>
+    <li><a data-lbl="france" href="http://www.oracle.com/fr/index.html">France</a></li>
+    <li><a data-lbl="germany" href="http://www.oracle.com/de/index.html">Deutschland</a></li>
+    <li><a data-lbl="greece" href="http://www.oracle.com/gr/index.html">Ελλάδα</a></li>
+    <li><a data-lbl="guatemala" href="http://www.oracle.com/lad/index.html">Guatemala</a></li>
+    <li><a data-lbl="honduras" href="http://www.oracle.com/lad/index.html">Honduras</a></li>
+    <li><a data-lbl="hong-kong" href="http://www.oracle.com/hk/index.html">香港</a></li>
+    <li><a data-lbl="hungary" href="http://www.oracle.com/hu/index.html">Magyarország</a></li>
+    <li><a data-lbl="india" href="http://www.oracle.com/in/index.html">India</a></li>
+    <li><a data-lbl="indonesia" href="http://www.oracle.com/as/index.html">Indonesia</a></li>
+    <li><a data-lbl="iraq" href="http://www.oracle.com/me/index.html">Iraq</a></li>
+    <li><a data-lbl="ireland" href="http://www.oracle.com/ie/index.html">Ireland</a></li>
+</ul>
+<ul>
+    <li><a data-lbl="israel" href="http://www.oracle.com/il/index.html">Israel</a></li>
+    <li><a data-lbl="italy" href="http://www.oracle.com/it/index.html">Italia</a></li>
+    <li><a data-lbl="japan" href="http://www.oracle.com/jp/index.html">日本</a></li>
+    <li><a data-lbl="jordan" href="http://www.oracle.com/me/index.html">Jordan</a></li>
+    <li><a data-lbl="kazakhstan" href="http://www.oracle.com/ru/index.html">Казахстан</a></li>
+    <li><a data-lbl="korea" href="http://www.oracle.com/kr/index.html">대한민국</a></li>
+    <li><a data-lbl="kosovo" href="http://www.oracle.com/yu/index.html">Kosovo</a></li>
+    <li><a data-lbl="kuwait" href="http://www.oracle.com/me/index.html">Kuwait</a></li>
+    <li><a data-lbl="laos" href="http://www.oracle.com/as/corporate/contact/laos-316260-en-as.html">Laos</a></li>
+    <li><a data-lbl="latvia" href="http://www.oracle.com/lv/index.html">Latvija</a></li>
+    <li><a data-lbl="lebanon" href="http://www.oracle.com/me/index.html">Lebanon</a></li>
+    <li><a data-lbl="lithuania" href="http://www.oracle.com/lt/index.html">Lietuva</a></li>
+    <li><a data-lbl="malaysia" href="http://www.oracle.com/as/index.html">Malaysia</a></li>
+    <li><a data-lbl="maldives" href="http://www.oracle.com/as/corporate/contact/maldives-316209-en-as.html">Maldives</a></li>
+    <li><a data-lbl="malta" href="http://www.oracle.com/mt/index.html">Malta</a></li>
+    <li><a data-lbl="mexico" href="http://www.oracle.com/lad/index.html">México</a></li>
+    <li><a data-lbl="moldova" href="http://www.oracle.com/ru/index.html">Moldova</a></li>
+    <li><a data-lbl="mongolia" href="http://www.oracle.com/mn">Mongolia</a></li>
+    <li><a data-lbl="nepal" href="http://www.oracle.com/as/corporate/contact/nepal-316215-en-as.html">Nepal</a></li>
+    <li><a data-lbl="netherlands" href="http://www.oracle.com/nl/index.html">Nederland</a></li>
+    <li><a data-lbl="new-zealand" href="http://www.oracle.com/nz/index.html">New Zealand</a></li>
+    <li><a data-lbl="nicaragua" href="http://www.oracle.com/lad/index.html">Nicaragua</a></li>
+</ul>
+<ul>
+    <li><a data-lbl="norway" href="http://www.oracle.com/no/index.html">Norge</a></li>
+    <li><a data-lbl="oman" href="http://www.oracle.com/me/index.html">Oman</a></li>
+    <li><a data-lbl="pakistan" href="http://www.oracle.com/as/corporate/contact/pakistan-316185-en-as.html">Pakistan</a></li>
+    <li><a data-lbl="panama" href="http://www.oracle.com/lad/index.html">Panamá</a></li>
+    <li><a data-lbl="paraguay" href="http://www.oracle.com/lad/index.html">Paraguay</a></li>
+    <li><a data-lbl="peru" href="http://www.oracle.com/lad/index.html">Perú</a></li>
+    <li><a data-lbl="philippines" href="http://www.oracle.com/as/index.html">Philippines</a></li>
+    <li><a data-lbl="poland" href="http://www.oracle.com/pl/">Polska</a></li>
+    <li><a data-lbl="portugal" href="http://www.oracle.com/pt/index.html">Portugal</a></li>
+    <li><a data-lbl="puerto-rico" href="http://www.oracle.com/lad/index.html">Puerto Rico</a></li>
+    <li><a data-lbl="qatar" href="http://www.oracle.com/me/index.html">Qatar</a></li>
+    <li><a data-lbl="romania" href="http://www.oracle.com/ro/index.html">România</a></li>
+    <li><a data-lbl="russia" href="http://www.oracle.com/ru/index.html">Россия и СНГ</a></li>
+    <li><a data-lbl="saudi-arabia" href="http://www.oracle.com/me/index.html">Saudi Arabia</a></li>
+    <li><a data-lbl="serbia-and-montenegro" href="http://www.oracle.com/yu/index.html">Srbija i Crna Gora</a></li>
+    <li><a data-lbl="singapore" href="http://www.oracle.com/as/index.html">Singapore</a></li>
+    <li><a data-lbl="slovakia" href="http://www.oracle.com/sk/index.html">Slovensko</a></li>
+    <li><a data-lbl="slovena" href="http://www.oracle.com/si/index.html">Slovenija</a></li>
+    <li><a data-lbl="south-africa" href="http://www.oracle.com/za/index.html">South Africa</a></li>
+    <li><a data-lbl="spain" href="http://www.oracle.com/es/index.html">España</a></li>
+</ul>
+<ul class="last">
+    <li><a data-lbl="sri-lanka" href="http://www.oracle.com/as/corporate/contact/srilanka-316250-en-as.html">Sri Lanka</a></li>
+    <li><a data-lbl="sweden" href="http://www.oracle.com/se/index.html">Sverige</a></li>
+    <li><a data-lbl="switzerland-french" href="http://www.oracle.com/ch-fr/index.html">Suisse - Français</a></li>
+    <li><a data-lbl="switzerland-german" href="http://www.oracle.com/ch-de/index.html">Schweiz - Deutsch</a></li>
+    <li><a data-lbl="taiwan" href="http://www.oracle.com/tw/index.html">台灣</a></li>
+    <li><a data-lbl="thailand" href="http://www.oracle.com/as/index.html">Thailand</a></li>
+    <li><a data-lbl="turkey" href="http://www.oracle.com/tr/index.html">Türkiye</a></li>
+    <li><a data-lbl="ukraine" href="http://www.oracle.com/ua/index.html">Україна</a></li>
+    <li><a data-lbl="united-arab-emirates" href="http://www.oracle.com/me/index.html">United Arab Emirates</a></li>
+    <li><a data-lbl="united-kingdom" href="http://www.oracle.com/uk/index.html">United Kingdom</a></li>
+    <li><a data-lbl="united-states" href="http://www.oracle.com/us/index.html">United States</a></li>
+    <li><a data-lbl="uruguay" href="http://www.oracle.com/lad/index.html">Uruguay</a></li>
+    <li><a data-lbl="venezuela" href="http://www.oracle.com/lad/index.html">Venezuela</a></li>
+    <li><a data-lbl="vietnam" href="http://www.oracle.com/as/corporate/contact/vietnam-316254-en-as.html">Vietnam</a></li>
+    <li><a data-lbl="yemen" href="http://www.oracle.com/me/index.html">Yemen</a></li>
+</ul>
+</div>
+</div>
+</div></li>
+    <li><a data-lbl="communities" href="http://www.oracle.com/us/community/index.html">Communities</a><div id="menu-communities" class="u01toolmenu" data-trackas="header">
+
+<div class="u01w2" data-lbl="communities">
+<div class="u01w3">
+<h5>Social Applications</h5>
+<ul data-lbl="social-applications">
+    <li><a data-lbl="oracleblogs" href="http://www.oracle.com/us/corporate/blogs/index.html">Oracle Blogs</a></li>
+    <li><a data-lbl="forums" href="https://community.oracle.com/welcome">Oracle Discussion Forums</a></li>
+    <li><a data-lbl="oraclewiki" href="http://wikis.oracle.com/">Oracle Wiki</a></li>
+    <li><a data-lbl="oracleonfacebook" href="http://www.oracle.com/us/social-media/facebook/index.html">Oracle on Facebook</a></li>
+    <li><a data-lbl="oracleongoogleplus" href="https://plus.google.com/115607918987921226255">Oracle on Google+</a></li>
+    <li><a data-lbl="oracleonlinkedin" href="http://www.oracle.com/us/social-media/linkedin/index.html">Oracle on LinkedIn</a></li>
+    <li><a data-lbl="oracleontwitter" href="http://www.oracle.com/us/social-media/twitter/index.html">Oracle on Twitter</a></li>
+    <li><a data-lbl="oracleonyoutube" href="http://www.youtube.com/oracle">Oracle on YouTube</a></li>
+</ul>
+<h5>Networks</h5>
+<ul data-lbl="networks">
+    <li><a data-lbl="oracleace" href="http://www.oracle.com/technetwork/community/oracle-ace/index.html">Oracle ACEs</a></li>
+    <li><a data-lbl="oraclepartnernetwork" href="http://www.oracle.com/partners/index.html">Oracle PartnerNetwork</a></li>
+    <li><a data-lbl="oracletechnologynetwork" href="http://www.oracle.com/technetwork/index.html">Oracle Technology Network</a></li>
+    <li><a data-lbl="oracleusergroups" href="http://www.oracle.com/us/corporate/customers/user-groups/index.html">Oracle User Groups</a></li>
+</ul>
+<h5>Support</h5>
+<ul data-lbl="support">
+    <li><a data-lbl="support" href="https://community.oracle.com/community/support">My Oracle Support Community</a></li>
+</ul>
+</div>
+</div>
+</div></li>
+    <li><a data-lbl="i-am-a" href="http://www.oracle.com/us/corporate/role/index.html">I am a...</a><div id="menu-iam" class="u01toolmenu" data-trackas="header">
+
+<div class="u01w2" data-lbl="i-am-a">
+<div class="u01w3">
+<ul>
+    <li><a data-lbl="javadeveloper" href="http://www.oracle.com/technetwork/java/index.html">Java Developer</a></li>
+    <li><a data-lbl="databaseadminsanddevelopers" href="http://www.oracle.com/technetwork/dbadev/index.html">Database Administrator / Developer</a></li>
+    <li><a data-lbl="systemadminsanddevelopers" href="http://www.oracle.com/technetwork/systems/index.html">System Admin / Developer</a></li>
+    <li><a data-lbl="architect" href="http://www.oracle.com/technetwork/architect/index.html">Architect</a></li>
+</ul>
+<ul>
+    <h5>C-Level Executive</h5>
+    <ul data-lbl="c-level-executive">
+        <li><a data-lbl="chieffinancialofficer(cfo)" href="http://www.oracle.com/us/c-central/cfo-solutions/">Chief Financial Officer</a></li>
+        <li><a data-lbl="chief-human-resource-officer" href="http://www.oracle.com/us/c-central/chro-solutions/">Chief Human Resources Officer</a></li>
+        <li><a data-lbl="chiefinformationofficer(cio)" href="http://www.oracle.com/us/c-central/cio-solutions/">Chief Information Officer</a></li>
+    </ul>
+    <h5>Other Roles</h5>
+    <ul data-lbl="other-roles">
+        <li><a data-lbl="analyst" href="https://www.oracle.com/corporate/analystrelations/index.html">Analyst</a></li>
+        <li><a data-lbl="investor" href="http://investor.oracle.com/overview/highlights/default.aspx">Investor</a></li>
+        <li><a data-lbl="jobseeker" href="https://www.oracle.com/corporate/careers/index.html">Job Seeker</a></li>
+        <li><a data-lbl="partner" href="http://www.oracle.com/partners/index.html">Partner</a></li>
+        <li><a data-lbl="student" href="https://academy.oracle.com/">Student</a></li>
+        <li><a data-lbl="midsizecompany" href="https://www.oracle.com/midsize/index.html">Midsize Company</a></li>
+    </ul>
+</ul>
+</div>
+</div>
+</div></li>
+    <li><a data-lbl="i-want-to" href="http://www.oracle.com/us/corporate/task/index.html">I want to...</a><div id="menu-iwant" class="u01toolmenu" data-trackas="header">
+
+<div class="u01w2" data-lbl="i-want-to">
+<div class="u01w3">
+<h5>Support</h5>
+<ul data-lbl="support">
+    <li><a data-lbl="createorupdateservicerequest" href="https://support.oracle.com/epmos/faces/SrHome">Create or Update Service Request</a></li>
+    <li><a data-lbl="searchsupportknowledgedatabase" href="https://support.oracle.com/epmos/faces/KmHome">Search Support Knowledge Database</a></li>
+    <li><a data-lbl="downloadpatches" href="https://support.oracle.com/epmos/faces/PatchHome">Download Patches</a></li>
+</ul>
+<h5>Education</h5>
+<ul data-lbl="education">
+    <li><a data-lbl="findoracleuniversitytraining" href="http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=3">Find Oracle University Training</a></li>
+    <li><a data-lbl="chooseanoraclecertificationpath" href="http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=141">Choose an Oracle Certification Path</a></li>
+</ul>
+<h5>Partners</h5>
+<ul data-lbl="partners">
+    <li><a data-lbl="find-a-partner" href="https://solutions.oracle.com/">Find a Partner</a></li>
+    <li><a data-lbl="join-the-oracle-partnernetwork" href="http://www.oracle.com/partners/en/partner-with-oracle/get-started/index.html#cw01step-1">Join the Oracle PartnerNetwork</a></li>
+    <li><a data-lbl="view-levels-and-benefits" href="http://www.oracle.com/partners/en/partner-with-oracle/get-started/index.html#cw01step-2">View Levels and Benefits</a></li>
+    <li><a data-lbl="get-trained" href="http://www.oracle.com/partners/en/partner-with-oracle/training/index.html">Get Trained</a></li>
+    <li><a data-lbl="get-specialized" href="http://www.oracle.com/partners/en/partner-with-oracle/get-started/index.html#cw01step-3">Get Specialized</a></li>
+    <li><a data-lbl="manage-membership" href="http://www.oracle.com/partners/en/partner-with-oracle/manage-membership/index.html">Manage Membership</a></li>
+    <li><a class="lnk-icon lnk-lock" data-lbl="manage-solutions-catalog" href="https://solutions.oracle.com/scwar/scr/Dashboard/index.html">Manage Solutions Catalog</a></li>
+    <li><a data-lbl="develop-solutions" href="http://www.oracle.com/partners/en/partner-with-oracle/develop-solutions/index.html">Develop Solutions</a></li>
+    <li><a data-lbl="market-and-sell" href="http://www.oracle.com/partners/en/partner-with-oracle/market-and-sell/index.html">Market and Sell</a></li>
+    <li><a data-lbl="access-software-and-tech-support" href="http://www.oracle.com/partners/en/partner-with-oracle/develop-solutions/index.html#cw01step-4">Access Tech Support</a></li>
+</ul>
+<h5>Other Tasks</h5>
+<ul data-lbl="other-task">
+    <li><a data-lbl="find-an-event-near-me" href="http://events.oracle.com/">Find an Event Near Me</a></li>
+    <li><a data-lbl="purchaseoracleproductsonline" href="https://shop.oracle.com/">Purchase Oracle Products Online</a></li>
+    <li><a data-lbl="browseoracledocumentation" href="http://docs.oracle.com/" target="_blank">Browse Oracle Documentation</a></li>
+    <li><a data-lbl="checkoracleearnings" href="http://investor.oracle.com/overview/highlights/default.aspx">Check Oracle Earnings</a></li>
+    <li><a data-lbl="checkoraclepricelists" href="http://www.oracle.com/us/corporate/pricing/index.html">Check Oracle Price Lists</a></li>
+    <li><a data-lbl="downloadoraclesoftware" href="http://www.oracle.com/technetwork/indexes/downloads/index.html">Download Oracle Software</a></li>
+    <li><a data-lbl="findanoracleace" href="http://apex.oracle.com/pls/otn/f?p=19297:3:2579654746979599">Find an Oracle ACE</a></li>
+    <li><a data-lbl="vieworaclebenchmarks" href="http://www.oracle.com/us/solutions/performance-scalability/index.html">View Oracle Benchmarks</a></li>
+</ul>
+</div>
+</div>
+</div></li>
+</ul>
+<ul data-lbl="welcome" class="u01pfile">
+    <li id="pfile-wlcm">Welcome</li>
+    <li id="pfile-acct"><a data-lbl="account" href="https://profile.oracle.com/myprofile/account/secure/update-account.jspx?nexturl=">Account</a></li>
+    <li id="pfile-sout"><a data-lbl="signout" href="javascript:sso_sign_out();">Sign Out</a></li>
+    <li id="pfile-regs"><a data-lbl="signin" href="http://www.oracle.com/webapps/redirect/signon?nexturl=http://www.oracle.com/technetwork/java/socket-140484.html">Sign In/Register</a></li>
+    <li id="pfile-help"><a data-lbl="help" href="http://www.oracle.com/us/corporate/contact/about-your-account-070507.html">Help</a></li>
+</ul>
+<div class="u01search" data-lbl="search">
+<form data-errormsg="No Search Term Entered. Please Try Again" action="http://search.oracle.com/search/search" method="get" name="searchForm" class="u01searchform">
+    <input type="hidden" value="1" name="start"> 				<input type="hidden" name="search_p_main_operator" value="all"> 				<input value="Search" name="q" class="textcnt autoclear ui-autocomplete-input" id="txtSearch" autocomplete="off"> 				<input type="submit" value="Submit Search" class="u01searchbttn">
+</form>
+<ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-1" tabindex="0" style="display: none;"></ul></div>
+</div></div>
+<ul data-trackas="hnav" class="u01nav">
+    <li><a data-lbl="productsandservices" href="http://www.oracle.com/us/products/index.html" data-trackas="hnav" class="u01nav">
+    <h3>Products</h3>
+    <div class="u01z1"><div class="u01z2"></div></div></a><div id="menu-products-n-services" class="u01menu" data-trackas="hnav" style="z-index: 2000; display: none;">
+
+<div class="u01w1" data-lbl="productsandservices"><!--Banner Area -->
+<div class="u01w4">
+<div class="u01w5" data-lbl="spotlight">
+<h5 class="u01bar">Spotlight</h5>
+<ul>
+    <li><a data-lbl="cloud-computing" href="https://www.oracle.com/cloud/index.html">Cloud Computing</a></li>
+    <li><a data-lbl="database-12c" href="https://www.oracle.com/database/index.html">Database 12c</a></li>
+    <li><a data-lbl="engineered-systems" href="https://www.oracle.com/engineered-systems/index.html">Engineered Systems</a></li>
+    <li><a data-lbl="enterprise-manager" href="http://www.oracle.com/us/products/enterprise-manager/index.html">Enterprise Manager</a></li>
+</ul>
+</div>
+<div class="u01w5 u01w5bannerimg" data-lbl="spotlight"><a data-lbl="oracle-openworld-watch-keynotes-promo" href="https://www.oracle.com/openworld/live/on-demand/index.html"><img alt="Oracle OpenWorld On-Demand Replays" data-imgpath="//www.oracle.com/us/assets/oow-watch-now-flyout-2321743.jpg"></a></div>
+<div class="u01w5 u01w5bannerimg" data-lbl="spotlight"><a data-lbl="solaris-11-2-promo" href="http://www.oracle.com/technetwork/server-storage/solaris11/downloads/beta-2182939.html"><img alt="Solaris 11.2" data-imgpath="http://www.oracle.com/us/assets/303084-solaris-bnr-2204218.jpg"></a></div>
+</div>
+<!-- /Banner Area --><!-- Column #1 -->
+<div class="u01w6">
+<h5 class="u01headingonly"><a data-lbl="oracle-cloud" href="https://www.oracle.com/cloud/index.html">Oracle Cloud</a></h5>
+<h5 class="u01headingonly"><a data-lbl="oracle-mobile" href="http://www.oracle.com/us/corporate/features/mobile/index.html">Oracle Mobile</a></h5>
+<h5><a data-lbl="applications" href="https://www.oracle.com/applications/">Applications</a></h5>
+<ul data-lbl="applications">
+    <li><a data-lbl="customer-experience" href="https://www.oracle.com/applications/customer-experience/index.html">Customer Experience</a></li>
+    <li><a data-lbl="enterprise-performance-management" href="https://www.oracle.com/applications/performance-management/index.html">Enterprise Performance Management</a></li>
+    <li><a data-lbl="enterprise-resource-planning" href="https://www.oracle.com/applications/enterprise-resource-planning/index.html">Enterprise Resource Planning</a></li>
+    <li><a data-lbl="human-capital-management" href="https://www.oracle.com/applications/human-capital-management/index.html">Human Capital Management</a></li>
+    <li><a data-lbl="supply-chain-management" href="https://www.oracle.com/applications/supply-chain-management/index.html">Supply Chain Management</a></li>
+    <li><a data-lbl="industry-applications" href="https://www.oracle.com/industries/index.html">Industry Applications</a></li>
+    <li><a data-lbl="applications-product-lines" href="https://www.oracle.com/applications/products.html">Applications Product Lines</a></li>
+</ul>
+<h5><a data-lbl="database" href="https://www.oracle.com/database/index.html">Database</a></h5>
+<ul data-lbl="database">
+    <li><a data-lbl="oracle-database" href="https://www.oracle.com/database/index.html">Oracle Database</a></li>
+    <li><a data-lbl="oracle-database-in-memory" href="http://www.oracle.com/us/products/database/options/database-in-memory/overview/index.html">Oracle Database In-Memory</a></li>
+    <li><a data-lbl="oracle-multitenant" href="http://www.oracle.com/us/products/database/options/multitenant/overview/index.html">Oracle Multitenant</a></li>
+    <li><a data-lbl="real-application-clusters" href="http://www.oracle.com/us/products/database/options/real-application-clusters/overview/index.html">Real Application Clusters</a></li>
+    <li><a data-lbl="datawarehousing" href="http://www.oracle.com/us/products/database/datawarehousing/overview/index.html">Data Warehousing</a></li>
+    <li><a data-lbl="database-high-availability" href="http://www.oracle.com/us/products/database/high-availability/overview/index.html">Database High Availability</a></li>
+    <li><a data-lbl="database-security" href="http://www.oracle.com/us/products/database/security/overview/index.html">Database Security</a></li>
+    <li><a data-lbl="mysql" href="http://www.oracle.com/us/products/mysql/index.html">MySQL</a></li>
+    <li><a data-lbl="oracle-nosql-database" href="http://www.oracle.com/us/products/database/nosql/overview/index.html">Oracle NoSQL Database</a></li>
+    <li><a data-lbl="timesten-in-memory-database" href="http://www.oracle.com/us/products/database/timesten/overview/index.html">TimesTen In-Memory Database</a></li>
+</ul>
+<h5 class="u01headingonly"><a data-lbl="java" href="https://www.oracle.com/java/index.html">Java</a></h5>
+<h5 class="u01headingonly"><a data-lbl="developer-tools" href="http://www.oracle.com/us/products/tools/overview/index.html">Developer Tools</a></h5>
+</div>
+<!-- /Column #1 --><!-- Column #2 -->
+<div class="u01w6">
+<h5>Operating Systems</h5>
+<ul data-lbl="operating-systems">
+    <li><a data-lbl="oracle-solaris" href="http://www.oracle.com/us/products/servers-storage/solaris/overview/index.html">Oracle Solaris</a></li>
+    <li><a data-lbl="oracle-linux" href="http://www.oracle.com/us/technologies/linux/overview/index.html">Oracle Linux</a></li>
+</ul>
+<h5><a data-lbl="business-analytics" href="http://www.oracle.com/us/solutions/business-analytics/overview/index.html">Business Analytics</a></h5>
+<h5><a data-lbl="middleware" href="http://www.oracle.com/us/products/middleware/overview/index.html">Middleware</a></h5>
+<ul data-lbl="middleware">
+    <li><a data-lbl="cloud-application-foundation" href="http://www.oracle.com/us/products/middleware/cloud-app-foundation/overview/index.html">Cloud Application Foundation</a></li>
+    <li><a data-lbl="data-integration" href="http://www.oracle.com/us/products/middleware/data-integration/overview/index.html">Data Integration</a></li>
+    <li><a data-lbl="identity-management" href="http://www.oracle.com/us/products/middleware/identity-management/overview/index.html">Identity Management</a></li>
+    <li><a data-lbl="mobile-platform" href="http://www.oracle.com/us/technologies/mobile/overview/index.html">Mobile Platform</a></li>
+    <li><a data-lbl="service-oriented-architecture" href="http://www.oracle.com/us/products/middleware/soa/overview/index.html">Service-Oriented Architecture</a></li>
+    <li><a data-lbl="bpm" href="http://www.oracle.com/us/technologies/bpm/overview/index.html">Business Process Management</a></li>
+    <li><a data-lbl="webcenter" href="http://www.oracle.com/us/products/middleware/webcenter/overview/index.html">WebCenter</a></li>
+    <li><a data-lbl="weblogic" href="http://www.oracle.com/us/products/middleware/cloud-app-foundation/weblogic/suite/overview/index.html">WebLogic</a></li>
+</ul>
+<h5><a data-lbl="enterprise-management" href="http://www.oracle.com/us/products/enterprise-manager/index.html">Enterprise Management</a></h5>
+<ul data-lbl="enterprise-management">
+    <li><a data-lbl="cloud-management" href="http://www.oracle.com/technetwork/oem/cloud-mgmt-496758.html">Cloud Management</a></li>
+    <li><a data-lbl="application-management" href="http://www.oracle.com/technetwork/oem/app-mgmt/index.html">Application Management</a></li>
+    <li><a data-lbl="database-management" href="http://www.oracle.com/technetwork/oem/db-mgmt/db-mgmt-093445.html">Database Management</a></li>
+    <li><a data-lbl="middleware-management" href="http://www.oracle.com/technetwork/oem/soa-mgmt/index.html">Middleware Management</a></li>
+    <li><a data-lbl="hardware-and-virtualization-management" href="http://www.oracle.com/technetwork/oem/host-server-mgmt/index.html">Hardware and Virtualization Management</a></li>
+    <li><a data-lbl="heterogeneous-management" href="http://www.oracle.com/technetwork/oem/extensions/index.html">Heterogeneous Management</a></li>
+    <li><a data-lbl="lifecycle-management" href="http://www.oracle.com/technetwork/oem/lifecycle-mgmt-495331.html">Lifecycle Management</a></li>
+</ul>
+</div>
+<!-- /Column #2 --><!-- Column #3 -->
+<div class="u01w6">
+<h5><a data-lbl="engsystems" href="https://www.oracle.com/engineered-systems/index.html">Engineered Systems</a></h5>
+<ul data-lbl="engsystems">
+    <li><a data-lbl="big-data-appliance" href="https://www.oracle.com/engineered-systems/big-data-appliance/index.html">Big Data Appliance</a></li>
+    <li><a data-lbl="exadata-database-machine" href="https://www.oracle.com/engineered-systems/exadata/index.html">Exadata Database Machine</a></li>
+    <li><a data-lbl="exalogic-elastic-cloud" href="https://www.oracle.com/engineered-systems/exalogic/index.html">Exalogic Elastic Cloud</a></li>
+    <li><a data-lbl="exalytics-in-memory-machine" href="https://www.oracle.com/engineered-systems/exalytics/index.html">Exalytics In-Memory Machine</a></li>
+    <li><a data-lbl="database-appliance" href="https://www.oracle.com/engineered-systems/database-appliance/index.html">Database Appliance</a></li>
+    <li><a data-lbl="oracle-supercluster" href="https://www.oracle.com/engineered-systems/supercluster/index.html">Oracle SuperCluster</a></li>
+    <li><a href="https://www.oracle.com/servers/virtual-compute-appliance/index.html" data-lbl="virtual-compute-appliance">Virtual Compute Appliance</a></li>
+    <li><a data-lbl="oracle-zfs-storage-appliance" href="https://www.oracle.com/storage/nas/index.html">Oracle ZFS Storage Appliance</a></li>
+    <li><a data-lbl="zero-data-loss-recovery-appliance" href="https://www.oracle.com/engineered-systems/zero-data-loss-recovery-appliance/index.html">Zero Data Loss Recovery Appliance</a></li>
+</ul>
+<h5><a data-lbl="servers" href="http://www.oracle.com/us/products/servers/overview/index.html">Servers</a></h5>
+<ul data-lbl="servers">
+    <li><a data-lbl="SPARC" href="http://www.oracle.com/us/products/servers-storage/servers/sparc/overview/index.html">SPARC</a></li>
+    <li><a data-lbl="x86" href="https://www.oracle.com/servers/x86/index.html">x86</a></li>
+    <li><a data-lbl="Blade" href="http://www.oracle.com/us/products/servers-storage/servers/blades/overview/index.html">Blade</a></li>
+    <li><a data-lbl="Netra" href="http://www.oracle.com/us/products/servers-storage/servers/netra/overview/index.html">Netra</a></li>
+</ul>
+<h5 class="u01headingonly"><a data-lbl="storage-and-tape" href="https://www.oracle.com/storage/index.html">Storage and Tape</a></h5>
+<ul data-lbl="storage-and-tape">
+    <li><a data-lbl="san-storage" href="https://www.oracle.com/storage/san/fs1/index.html">SAN Storage</a></li>
+    <li><a data-lbl="nas-storage" href="https://www.oracle.com/storage/nas/index.html">NAS Storage</a></li>
+    <li><a data-lbl="tape-storage" href="http://www.oracle.com/us/products/servers-storage/storage/tape-storage/overview/index.html">Tape Storage</a></li>
+</ul>
+<h5 class="u01headingonly"><a data-lbl="networking-and-data-center-fabric-products" href="http://www.oracle.com/us/products/networking/overview/index.html">Networking and Data Center Fabric Products</a></h5>
+<h5 class="u01headingonly"><a href="http://www.oracle.com/us/products/enterprise-communications/index.html" data-lbl="enterprise-communications">Enterprise Communications</a></h5>
+</div>
+<!-- /Column #3 --><!-- Column #4 -->
+<div class="u01w6">
+<h5 class="u01headingonly"><a data-lbl="virtualization" href="http://www.oracle.com/us/technologies/virtualization/overview/index.html">Virtualization</a></h5>
+<ul data-lbl="virtualization">
+    <li><a href="http://www.oracle.com/us/technologies/virtualization/secure-global-desktop/overview/index.html" data-lbl="oracle-secure-global-desktop">Oracle Secure Global Desktop</a></li>
+    <li><a data-lbl="oracle-vm-for-x86" href="http://www.oracle.com/us/technologies/virtualization/oraclevm/index.html">Oracle VM Server for x86</a></li>
+    <li><a data-lbl="oracle-vm-for-sparc" href="http://www.oracle.com/us/technologies/virtualization/oracle-vm-server-for-sparc/index.html">Oracle VM Server for SPARC</a></li>
+</ul>
+<h5><a data-lbl="services" href="http://www.oracle.com/us/products/index.html">Services</a></h5>
+<ul data-lbl="services">
+    <li><a data-lbl="consulting" href="http://www.oracle.com/us/products/consulting/overview/index.html">Consulting</a></li>
+    <li><a data-lbl="premiersupport" href="http://www.oracle.com/us/support/premier/overview/index.html">Premier Support</a></li>
+    <li><a data-lbl="advanced-customer-support" href="http://www.oracle.com/us/support/advanced-customer-services/overview/index.html">Advanced Customer Support</a></li>
+    <li><a data-lbl="oracleuniversity" href="http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=3">Training</a></li>
+    <li><a data-lbl="cloudservices" href="https://www.oracle.com/cloud/index.html">Cloud Services</a></li>
+    <li><a data-lbl="financing" href="http://www.oracle.com/us/products/financing/overview/index.html">Financing</a></li>
+</ul>
+<h5 class="u01headingonly"><a href="http://www.oracle.com/us/corporate/customers/index.html" data-lbl="oracle-customer-programs">Oracle Customer Programs</a></h5>
+<h5 class="u01headingonly"><a href="http://www.oracle.com/search/customers/" data-lbl="customer-and-partner-successes">Customer and Partner Successes</a></h5>
+<h5 class="u01headingonly"><a data-lbl="productslist" href="http://www.oracle.com/us/products/productslist/index.html">Products A-Z List</a></h5>
+<h5 class="u01headingonly"><a data-lbl="oracle-products-from-acquired-companies" href="http://www.oracle.com/us/products/acquired-products-list/index.html">Oracle Products from Acquired Companies</a></h5>
+<h5 class="u01headingonly"><a data-lbl="product-price-list" href="http://www.oracle.com/us/corporate/pricing/index.html">Product Price List</a></h5>
+</div>
+<!-- /Column #4 --></div>
+</div></li>
+    <li><a data-lbl="solutions" href="http://www.oracle.com/us/solutions/index.html" data-trackas="hnav" class="u01nav">
+    <h3>Solutions</h3>
+    <div class="u01z1"><div class="u01z2"></div></div></a><div id="menu-solutions" class="u01menu" data-trackas="hnav" style="display: none;">
+
+<div class="u01w1" data-lbl="solutions"><!-- Banner Area -->
+<div class="u01w4">
+<div class="u01w5" data-lbl="spotlight">
+<h5 class="u01bar">Spotlight</h5>
+<ul>
+    <li><a data-lbl="cloudcomputing" href="https://www.oracle.com/cloud/index.html">Cloud</a></li>
+    <li><a data-lbl="midsizecompany" href="https://www.oracle.com/midsize/index.html">Midsize</a></li>
+    <li><a data-lbl="industries" href="https://www.oracle.com/industries/index.html">Industries</a></li>
+    <li><a data-lbl="optimized-data-center" href="http://www.oracle.com/us/corporate/features/optimized-data-center/index.html">Optimized Data Center</a></li>
+    <li><a data-lbl="sustainability" href="http://www.oracle.com/us/products/applications/green/061929.html">Sustainability</a></li>
+</ul>
+</div>
+</div>
+<!-- /Banner Area --><!-- Column #1 -->
+<div class="u01w6">
+<h5 class="u01headingonly"><a data-lbl="cloud-solutions" href="https://www.oracle.com/cloud/index.html">Cloud Solutions</a></h5>
+<ul data-lbl="cloud-solutions">
+    <li><a data-lbl="oracle-applications-cloud" href="https://www.oracle.com/applications/index.html">Oracle Applications Cloud</a></li>
+</ul>
+<h5 class="u01headingonly"><a data-lbl="mobile-solutions" href="http://www.oracle.com/us/corporate/features/mobile/index.html">Mobile Solutions</a></h5>
+<ul data-lbl="mobile-solutions">
+    <li><a data-lbl="oracle-mobile-platform" href="http://www.oracle.com/us/technologies/mobile/overview/index.html">Oracle Mobile Platform</a></li>
+</ul>
+<h5><a data-lbl="technologysolutions" href="http://www.oracle.com/us/solutions/technology/index.html">Technology Solutions</a></h5>
+<ul data-lbl="technologysolutions">
+    <li><a data-lbl="solutionsbigdata" href="https://www.oracle.com/bigdata/index.html">Big Data</a></li>
+    <li><a data-lbl="datawarehousing" href="http://www.oracle.com/us/products/database/datawarehousing/overview/index.html">Data Warehousing</a></li>
+    <li><a data-lbl="database-migration" href="http://www.oracle.com/technetwork/database/migration/index.html">Database Migration</a></li>
+    <li><a data-lbl="high-availability" href="http://www.oracle.com/us/products/database/high-availability/overview/index.html">High Availability</a></li>
+    <li><a data-lbl="internet-of-things" href="http://www.oracle.com/us/solutions/internetofthings/index.html">Internet of Things</a></li>
+    <li><a data-lbl="javatechnology" href="https://www.oracle.com/java/index.html">Java Technology</a></li>
+    <li><a data-lbl="linux" href="http://www.oracle.com/us/technologies/linux/overview/index.html">Linux</a></li>
+    <li><a data-lbl="opensource" href="http://www.oracle.com/us/technologies/open-source/overview/index.html">Open Source</a></li>
+    <li><a data-lbl="oracleoptimizedsolutions" href="http://www.oracle.com/us/solutions/oos/overview/index.html">Oracle Optimized Solutions</a></li>
+    <li><a data-lbl="security" href="http://www.oracle.com/us/technologies/security/overview/index.html">Security</a></li>
+    <li><a data-lbl="server-consolidation" href="http://www.oracle.com/us/products/servers-storage/servers/consolidation/index.html">Server Consolidation</a></li>
+    <li><a data-lbl="service-oriented-architecture" href="http://www.oracle.com/us/products/middleware/soa/overview/index.html">Service-Oriented Architecture</a></li>
+    <li><a data-lbl="solaris" href="http://www.oracle.com/us/products/servers-storage/solaris/overview/index.html">Solaris</a></li>
+    <li><a data-lbl="virtualization" href="http://www.oracle.com/us/technologies/virtualization/overview/index.html">Virtualization</a></li>
+    <li><a data-lbl="windows-and-.net" href="http://www.oracle.com/us/technologies/microsoft/overview/index.html">Windows and .Net</a></li>
+</ul>
+</div>
+<!-- /Column #1 --><!-- Column #2 -->
+<div class="u01w6">
+<h5><a data-lbl="businesssolutions" href="http://www.oracle.com/us/solutions/business-solutions-444942.html">Business Solutions</a></h5>
+<ul data-lbl="businesssolutions">
+    <li><a data-lbl="businessanalytics" href="http://www.oracle.com/us/solutions/business-analytics/overview/index.htm">Business Analytics</a></li>
+    <li><a data-lbl="business-process-services" href="http://www.oracle.com/us/products/applications/business-process-outsourcing/overview/index.html">Business Process Services</a></li>
+    <li><a data-lbl="customer-experience" href="https://www.oracle.com/applications/customer-experience/index.html">Customer Experience</a></li>
+    <li><a data-lbl="customerrelationshipmanagement" href="http://www.oracle.com/us/solutions/crm/index.html">Customer Relationship Management</a></li>
+    <li><a data-lbl="enterprise-content-management" href="http://www.oracle.com/us/products/middleware/webcenter/content/overview/index.html">Enterprise Content Management</a></li>
+    <li><a data-lbl="enterprise-management" href="http://www.oracle.com/us/products/enterprise-manager/index.html">Enterprise Management</a></li>
+    <li><a data-lbl="financial-management" href="http://www.oracle.com/us/solutions/financial-management/index.html">Financial Management</a></li>
+    <li><a data-lbl="governanceriskandcompliance" href="http://www.oracle.com/us/solutions/corporate-governance/index.html">Governance, Risk, and Compliance</a></li>
+    <li><a data-lbl="human-capital-management" href="https://www.oracle.com/applications/human-capital-management/index.html">Human Capital Management</a></li>
+    <li><a data-lbl="marketingautomation" href="https://www.oracle.com/applications/customer-experience/marketing/index.html">Marketing</a></li>
+    <li><a data-lbl="master-data-management" href="http://www.oracle.com/us/products/applications/master-data-management/index.html">Master Data Management</a></li>
+    <li><a data-lbl="database-and-it-infrastructure-for-sap" href="http://www.oracle.com/us/solutions/sap/index.html">Database and IT Infrastructure for SAP</a></li>
+    <li><a data-lbl="oracle-for-midsize-companies" href="https://www.oracle.com/midsize/index.html">Oracle for Midsize Companies</a></li>
+    <li><a data-lbl="procurement" href="http://www.oracle.com/us/solutions/procurement/index.html">Procurement</a></li>
+    <li><a data-lbl="project-portfolio-management" href="http://www.oracle.com/us/solutions/project-management/index.html">Project Portfolio Management</a></li>
+    <li><a data-lbl="social-relationship-management" href="http://www.oracle.com/us/solutions/social/overview/index.html">Social Relationship Management</a></li>
+    <li><a data-lbl="supply-chain-management" href="https://www.oracle.com/applications/supply-chain-management/index.html">Supply Chain Management</a></li>
+    <li><a data-lbl="sustainability" href="http://www.oracle.com/us/products/applications/green/061929.html">Sustainability</a></li>
+</ul>
+</div>
+<!-- /Column #2 --><!-- Column #3 -->
+<div class="u01w6">
+<h5><a data-lbl="industrysolutions" href="https://www.oracle.com/industries/index.html">Industry Solutions</a></h5>
+<ul data-lbl="industrysolutions">
+    <li><a data-lbl="aerospace-and-defense" href="http://www.oracle.com/us/industries/aerospace/overview/index.html">Aerospace and Defense</a></li>
+    <li><a data-lbl="automotive" href="http://www.oracle.com/us/industries/automotive/overview/index.html">Automotive</a></li>
+    <li><a data-lbl="chemicals" href="http://www.oracle.com/us/industries/chemicals/overview/index.html">Chemicals</a></li>
+    <li><a data-lbl="communications" href="https://www.oracle.com/industries/communications/index.html">Communications</a></li>
+    <li><a data-lbl="consumer-goods" href="http://www.oracle.com/us/industries/consumer/overview/index.html">Consumer Goods</a></li>
+    <li><a data-lbl="education-and-research" href="http://www.oracle.com/us/industries/education-and-research/overview/index.html">Education and Research</a></li>
+    <li><a data-lbl="engineering-and-construction" href="http://www.oracle.com/us/industries/engineering-and-construction/overview/index.html">Engineering and Construction</a></li>
+    <li><a data-lbl="financialservices" href="https://www.oracle.com/industries/financial-services/index.html">Financial Services</a></li>
+    <li><a data-lbl="healthcare" href="http://www.oracle.com/us/industries/healthcare/overview/index.html">Healthcare</a></li>
+    <li><a data-lbl="health-sciences" href="https://www.oracle.com/industries/health-sciences/index.html">Health Sciences</a></li>
+    <li><a data-lbl="hightechnology" href="http://www.oracle.com/us/industries/high-tech/overview/index.html">High Technology</a></li>
+    <li><a data-lbl="hospitality" href="https://www.oracle.com/industries/hospitality/index.html">Hospitality</a></li>
+    <li><a data-lbl="industrial-manufacturing" href="http://www.oracle.com/us/industries/industrial-manufacturing/overview/index.html">Industrial Manufacturing</a></li>
+    <li><a data-lbl="insurance" href="https://www.oracle.com/industries/financial-services/insurance.html">Insurance</a></li>
+    <li><a data-lbl="life-sciences" href="http://www.oracle.com/us/industries/life-sciences/overview/index.html">Life Sciences</a></li>
+    <li><a data-lbl="media-and-entertainment" href="http://www.oracle.com/us/industries/media-entertainment/overview/index.html">Media and Entertainment</a></li>
+    <li><a data-lbl="natural-resources" href="http://www.oracle.com/us/industries/natural-resources/overview/index.html">Natural Resources</a></li>
+    <li><a data-lbl="oil-and-gas" href="http://www.oracle.com/us/industries/oil-and-gas/overview/index.html">Oil and Gas</a></li>
+    <li><a data-lbl="professional-services" href="http://www.oracle.com/us/industries/professional-services/overview/index.html">Professional Services</a></li>
+    <li><a data-lbl="publicsector" href="http://www.oracle.com/us/industries/public-sector/overview/index.html">Public Sector</a></li>
+    <li><a data-lbl="retail" href="https://www.oracle.com/industries/retail/index.html">Retail</a></li>
+    <li><a data-lbl="travel-and-transportation" href="http://www.oracle.com/us/industries/travel-transportation/overview/index.html">Travel and Transportation</a></li>
+    <li><a data-lbl="utilities" href="https://www.oracle.com/industries/utilities/index.html">Utilities</a></li>
+    <li><a data-lbl="wholesale-distribution" href="http://www.oracle.com/us/industries/wholesale/overview/index.html">Wholesale Distribution</a></li>
+</ul>
+</div>
+<!-- /Column #3 --><!-- Column #4 -->
+<div class="u01w6">
+<h5><a data-lbl="customer-experience-solutions" href="https://www.oracle.com/applications/customer-experience/index.html"> Customer Experience Solutions</a></h5>
+<ul data-lbl="customer-experience-solutions">
+    <li><a data-lbl="marketing" href="https://www.oracle.com/applications/customer-experience/marketing/index.html">Marketing</a></li>
+    <li><a data-lbl="sales" href="https://www.oracle.com/applications/customer-experience/sales/index.html">Sales</a></li>
+    <li><a data-lbl="service" href="https://www.oracle.com/applications/customer-experience/service/index.html">Service</a></li>
+    <li><a data-lbl="commerce" href="https://www.oracle.com/applications/customer-experience/commerce/index.html">Commerce</a></li>
+    <li><a data-lbl="social" href="https://www.oracle.com/applications/customer-experience/social/index.html">Social</a></li>
+    <li><a data-lbl="cpq" href="http://www.oracle.com/us/solutions/customer-experience/cpq-cloud/overview/index.html">CPQ</a></li>
+</ul>
+<h5 class="u01headingonly"><a href="http://www.oracle.com/us/corporate/customers/index.html" data-lbl="oracle-customer-programs">Oracle Customer Programs</a></h5>
+<h5 class="u01headingonly"><a href="http://www.oracle.com/search/customers/" data-lbl="customer-and-partner-successes">Customer and Partner Successes</a></h5>
+<h5><a data-lbl="partnersolutions" href="https://solutions.oracle.com/scwar/scr/index.html?canned_search=SP_LOC_ALL#solutions-tab">Partner Solutions</a></h5>
+<ul data-lbl="partnersolutions">
+    <li><a data-lbl="oracle-exastack-optimized" href="https://solutions.oracle.com/scwar/scr/index.html?canned_search=SP_EXA_STO">Oracle Exastack Optimized</a></li>
+    <li><a data-lbl="oracle-exastack-ready" href="https://solutions.oracle.com/scwar/scr/index.html?canned_search=SP_EXA_STKR">Oracle Exastack Ready</a></li>
+    <li><a data-lbl="oracle-validated-integration" href="https://solutions.oracle.com/scwar/scr/AboutPartners/index.html#validated-integration">Oracle Validated Integration</a></li>
+    <li><a data-lbl="oracle-accelerate" href="https://solutions.oracle.com/scwar/scr/AboutPartners/index.html#midsized-companies">Oracle Accelerate</a></li>
+</ul>
+</div>
+<!-- /Column #4 --></div>
+</div></li>
+    <li><a data-lbl="downloads" href="http://www.oracle.com/us/downloads/index.html" data-trackas="hnav" class="u01nav" style="">
+    <h3>Downloads</h3>
+    <div class="u01z1" style="display: none;"><div class="u01z2"></div></div></a><div id="menu-downloads" class="u01menu" data-trackas="hnav" style="display: none;">
+
+<div class="u01w1" data-lbl="downloads"><!-- Banner Area -->
+<div class="u01w4">
+<div class="u01w5">
+<h5 class="u01bar">Popular Downloads</h5>
+<ul data-lbl="popular-downloads">
+    <li><a data-lbl="java-for-developers" href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java for Developers</a></li>
+    <li><a data-lbl="java-for-your-computer" href="http://java.com/download">Java for Your Computer</a></li>
+    <li><a data-lbl="javase" href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java SE</a></li>
+    <li><a data-lbl="solaris" href="http://www.oracle.com/technetwork/server-storage/solaris11/downloads/index.html">Solaris</a></li>
+    <li><a data-lbl="mysql" href="http://www.mysql.com/downloads/">MySQL</a></li>
+    <li><a data-lbl="oracle-fusion-middleware-11g" href="http://www.oracle.com/technetwork/middleware/fusion-middleware/downloads/index.html">Oracle Fusion Middleware 11<em>g</em></a></li>
+    <li><a data-lbl="oracle-database" href="http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html">Oracle Database</a></li>
+    <li><a data-lbl="prebuilt-developer-vms" href="http://www.oracle.com/technetwork/community/developer-vm/index.html">Prebuilt Developer VMs</a></li>
+</ul>
+</div>
+</div>
+<!-- /Banner Area --><!-- Column #1 -->
+<div class="u01w6">
+<h5><a data-lbl="database" href="http://www.oracle.com/technetwork/indexes/downloads/index.html#database">Database</a></h5>
+<ul data-lbl="database">
+    <li><a data-lbl="oracle-database" href="http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html">Oracle Database</a></li>
+    <li><a data-lbl="oracle-database-11g-express-edition" href="http://www.oracle.com/technetwork/database/database-technologies/express-edition/downloads/index.html">Oracle Database 11g Express Edition</a></li>
+    <li><a data-lbl="mysql" href="http://www.mysql.com/downloads/">MySQL</a></li>
+    <li><a data-lbl="oracle-berkeley-db" href="http://www.oracle.com/technetwork/products/berkeleydb/downloads/index.html">Oracle Berkeley DB</a></li>
+    <li><a data-lbl="oracle-instant-client" href="http://www.oracle.com/technetwork/database/features/instant-client/index-097480.html">Oracle Instant Client</a></li>
+    <li><a data-lbl="oracle-application-express" href="http://www.oracle.com/technetwork/developer-tools/apex/downloads/index.html">Oracle Application Express</a></li>
+    <li><a class="u01seeall" data-lbl="see-all-database" href="http://www.oracle.com/technetwork/indexes/downloads/index.html#database">See All...</a></li>
+</ul>
+<h5><a data-lbl="middleware" href="http://www.oracle.com/technetwork/indexes/downloads/index.html#middleware">Middleware</a></h5>
+<ul data-lbl="middleware">
+    <li><a data-lbl="oracle-fusion-middleware-(including-oracle-weblogic-server)" href="http://www.oracle.com/technetwork/middleware/fusion-middleware/downloads/index.html">Oracle Fusion Middleware (including Oracle WebLogic Server)</a></li>
+    <li><a data-lbl="oracle-jrockit" href="http://www.oracle.com/technetwork/middleware/jrockit/downloads/index.html">Oracle JRockit</a></li>
+    <li><a data-lbl="oracle-soa-suite" href="http://www.oracle.com/technetwork/middleware/soasuite/downloads/index.html">Oracle SOA Suite</a></li>
+    <li><a class="u01seeall" data-lbl="see-all-middleware" href="http://www.oracle.com/technetwork/indexes/downloads/index.html#middleware">See All...</a></li>
+</ul>
+</div>
+<!-- /Column #1 --><!-- Column #2 -->
+<div class="u01w6">
+<h5><a data-lbl="enterprise-management" href="http://www.oracle.com/technetwork/indexes/downloads/index.html#em">Enterprise Management</a></h5>
+<ul data-lbl="enterprise-management">
+    <li><a data-lbl="oracle-enterprise-manager" href="http://www.oracle.com/technetwork/oem/enterprise-manager/downloads/index.html">Oracle Enterprise Manager</a></li>
+    <li><a data-lbl="oracle-application-testing-suite" href="http://www.oracle.com/technetwork/oem/downloads/index-084446.html">Oracle Application Testing Suite</a></li>
+    <li><a class="u01seeall" data-lbl="see-all-enterprise-management" href="http://www.oracle.com/technetwork/indexes/downloads/index.html#em">See All...</a></li>
+</ul>
+<h5><a data-lbl="server-and-storage-systems" href="http://www.oracle.com/technetwork/indexes/downloads/index.html#servers">Server and Storage Systems</a></h5>
+<ul data-lbl="server-and-storage-systems">
+    <li><a data-lbl="solaris" href="http://www.oracle.com/technetwork/server-storage/solaris11/downloads/index.html">Solaris</a></li>
+    <li><a data-lbl="linux-and-oracle-vm" href="http://edelivery.oracle.com/linux">Linux and Oracle VM</a></li>
+    <li><a data-lbl="firmware" href="https://support.oracle.com/">Firmware</a></li>
+    <li><a class="u01seeall" data-lbl="see-all-server-and-storage-systems" href="http://www.oracle.com/technetwork/indexes/downloads/index.html#servers">See All...</a></li>
+</ul>
+</div>
+<!-- /Column #2 --><!-- Column #3 -->
+<div class="u01w6">
+<h5><a data-lbl="developer-tools" href="http://www.oracle.com/technetwork/indexes/downloads/index.html#tools">Developer Tools</a></h5>
+<ul data-lbl="developer-tools">
+    <li><a data-lbl="sql-developer" href="http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html">SQL Developer</a></li>
+    <li><a data-lbl="jdeveloper-and-adf" href="http://www.oracle.com/technetwork/developer-tools/jdev/downloads/index.html">JDeveloper and ADF</a></li>
+    <li><a data-lbl="developer-tools-for-visual-studio" href="http://www.oracle.com/technetwork/database/windows/downloads/index-101290.html">Developer Tools for Visual Studio</a></li>
+    <li><a data-lbl="enterprise-pack-for-eclipse" href="http://www.oracle.com/technetwork/developer-tools/eclipse/downloads/index.html">Enterprise Pack for Eclipse</a></li>
+    <li><a data-lbl="netbeans-ide" href="http://netbeans.org/downloads/index.html">NetBeans IDE</a></li>
+    <li><a class="u01seeall" data-lbl="see-all-developer-tools" href="http://www.oracle.com/technetwork/indexes/downloads/index.html#tools">See All...</a></li>
+</ul>
+<h5 class="u01headingonly"><a data-lbl="prebuilt-developer-vms" href="http://www.oracle.com/technetwork/community/developer-vm/index.html">Prebuilt Developer VMs</a></h5>
+</div>
+<!-- /Column #3 --><!-- Column #4 -->
+<div class="u01w6">
+<h5><a data-lbl="applications" href="http://www.oracle.com/technetwork/indexes/downloads/index.html#apps">Applications</a></h5>
+<ul data-lbl="applications">
+    <li><a data-lbl="oracle-fusion-applications-oracle-e-business-suite-peoplesoft-jd-edwards-siebel-crm" href="http://edelivery.oracle.com/">Oracle Fusion Applications, Oracle E-Business Suite, PeopleSoft, JD Edwards, Siebel CRM</a></li>
+    <li><a data-lbl="agile" href="http://www.oracle.com/technetwork/apps-tech/index-097651.html">Agile</a></li>
+    <li><a data-lbl="autovue" href="http://www.oracle.com/technetwork/apps-tech/index-095827.html">AutoVue</a></li>
+    <li><a class="u01seeall" data-lbl="see-all-applications" href="http://www.oracle.com/technetwork/indexes/downloads/index.html#apps">See All...</a></li>
+</ul>
+</div>
+<!-- /Column #4 --></div>
+</div></li>
+    <li><a data-lbl="store" href="https://shop.oracle.com/" data-trackas="hnav" class="u01nav">
+    <h3>Store</h3>
+    <div class="u01z1"><div class="u01z2"></div></div></a><div id="menu-store" class="u01menu" data-trackas="hnav" style="display: none;">
+
+<div class="u01w1" data-lbl="store"><!-- Banner Area -->
+<div class="u01w4">
+<div class="u01w5">
+<h5 class="u01bar">Spotlight</h5>
+<ul data-lbl="spotlight">
+    <li><a data-lbl="oracle-database-standard-edition-license" href="http://www.oracle.com/store/OracleDatabaseStandardEdition">Oracle Database, Standard Edition License</a></li>
+    <li><a data-lbl="oracle-crystal-ball" href="http://www.oracle.com/store/OracleCrystalBall">Oracle Crystal Ball</a></li>
+    <li><a data-lbl="mysql-standard-edition-subscription" href="http://www.oracle.com/store/MySQLStandardEditionSubscription14socketserver">MySQL Standard Edition Subscription</a></li>
+    <li><a data-lbl="oracle-solaris-premier-subscription-for-non-oracle-hardware" href="http://www.oracle.com/store/OracleSolarisPremierSubscriptionforNonOracleHardware14socketserver">Oracle Solaris Premier Subscription for Non-Oracle Hardware</a></li>
+    <li><a data-lbl="keyboard-and-mouse" href="http://www.oracle.com/store/keyboardandmouse">Keyboard and Mouse</a></li>
+    <li><a data-lbl="sun-multithreaded-10-gbe-networking-card" href="http://www.oracle.com/store/SunMultithreaded10GbENetworkingCard">Sun Multithreaded 10 GbE Networking Card</a></li>
+</ul>
+</div>
+</div>
+<!-- /Banner Area --><!-- Column #1 -->
+<div class="u01w6">
+<h5><a data-lbl="database" href="https://shop.oracle.com/product/database">Database</a></h5>
+<ul data-lbl="database">
+    <li><a data-lbl="oracle-database" href="http://www.oracle.com/store/OracleDatabase">Oracle Database</a></li>
+    <li><a data-lbl="mysql" href="http://www.oracle.com/store/MySQL">MySQL</a></li>
+    <li><a class="u01seeall" data-lbl="see-all-database" href="http://www.oracle.com/store/Database">See All...</a></li>
+</ul>
+<h5><a data-lbl="operating-systems-and-infrastructure" href="https://shop.oracle.com/pls/ostore/f?p=dstore:2:0::NO:RIR,RP,2:PROD_HIER_ID:4510271054261805728467">Operating Systems and Infrastructure</a></h5>
+<ul data-lbl="operating-systems-and-infrastructure">
+    <li><a data-lbl="linux" href="http://www.oracle.com/store/OracleLinux">Linux</a></li>
+    <li><a data-lbl="solaris" href="http://www.oracle.com/store/OracleSolaris">Solaris</a></li>
+    <li><a data-lbl="virtualization" href="http://www.oracle.com/store/Virtualization">Virtualization</a></li>
+    <li><a class="u01seeall" data-lbl="see-all-operating-systems-and-infrastructure" href="https://shop.oracle.com/pls/ostore/f?p=dstore:2:0::NO:RIR,RP,2:PROD_HIER_ID:4510271054261805728467">See All...</a></li>
+</ul>
+</div>
+<!-- /Column #1 --><!-- Column #2 -->
+<div class="u01w6">
+<h5><a data-lbl="fusion-middleware" href="http://www.oracle.com/store/FusionMiddleware">Fusion Middleware</a></h5>
+<ul data-lbl="fusion-middleware">
+    <li><a data-lbl="java" href="http://www.oracle.com/store/Java">Java</a></li>
+    <li><a data-lbl="application-server-and-application-grid" href="https://shop.oracle.com/pls/ostore/f?p=dstore:2:0::NO:RIR,RP,2:PROD_HIER_ID:4509884312651805720003">Application Server and Application Grid</a></li>
+    <li><a class="u01seeall" data-lbl="see-all-fusion-middleware" href="http://www.oracle.com/store/FusionMiddleware">See All...</a></li>
+</ul>
+<h5><a data-lbl="applications" href="http://www.oracle.com/store/Applications">Applications</a></h5>
+<ul data-lbl="applications">
+    <li><a data-lbl="autovue" href="http://www.oracle.com/store/AutoVue">AutoVue</a></li>
+    <li><a data-lbl="oracle-crystal-ball" href="http://www.oracle.com/store/OracleCrystalBall">Oracle Crystal Ball</a></li>
+    <li><a data-lbl="primavera" href="http://www.oracle.com/store/Primavera">Primavera</a></li>
+    <li><a class="u01seeall" data-lbl="see-all-applications" href="http://www.oracle.com/store/Applications">See All...</a></li>
+</ul>
+</div>
+<!-- /Column #2 --><!-- Column #3 -->
+<div class="u01w6">
+<h5 class="u01headingonly"><a data-lbl="servers" href="http://www.oracle.com/store/Servers">Servers</a></h5>
+<h5><a data-lbl="desktops" href="http://www.oracle.com/store/Desktops">Desktops</a></h5>
+<ul data-lbl="desktops">
+    <li><a data-lbl="peripherals" href="http://www.oracle.com/store/Peripherals">Peripherals</a></li>
+    <li><a class="u01seeall" data-lbl="see-all-desktops" href="http://www.oracle.com/store/Desktops">See All...</a></li>
+</ul>
+<h5><a data-lbl="storage-and-tape" href="http://www.oracle.com/store/StorageandTape">Storage and Tape</a></h5>
+<ul data-lbl="storage-and-tape">
+    <li><a data-lbl="switches-and-directors" href="http://www.oracle.com/store/SwitchesandDirectors">Switches and Directors</a></li>
+    <li><a data-lbl="host-bus-adapters" href="http://www.oracle.com/store/HostBusAdapters">Host Bus Adapters</a></li>
+    <li><a class="u01seeall" data-lbl="see-all-storage-and-tape" href="http://www.oracle.com/store/StorageandTape">See All...</a></li>
+</ul>
+<h5 class="u01headingonly"><a data-lbl="networking-products" href="http://www.oracle.com/store/NetworkingProducts">Networking Products</a></h5>
+<h5 class="u01headingonly"><a data-lbl="engineered-systems" href="http://www.oracle.com/store/EngineeredSystems">Engineered Systems</a></h5>
+<h5 class="u01headingonly"><a data-lbl="system-components" href="https://shop.oracle.com/pls/ostore/f?p=dstore:6000:4077903062510908::NO:RIR,RP,6000:PROD_HIER_ID:-3">System Components</a></h5>
+<h5 class="u01headingonly"><a data-lbl="spare-parts" href="https://shop.oracle.com/pls/ostore/f?p=dstore:6000:4077903062510908::NO:RIR,RP,6000:PROD_HIER_ID:-2">Spare Parts</a></h5>
+</div>
+<!-- /Column #3 --><!-- Column #4 -->
+<div class="u01w6">
+<h5>Store Help</h5>
+<ul data-lbl="store-help">
+    <li><a data-lbl="store-faqs" href="https://shop.oracle.com/pls/ostore/f?p=dstore:help:0">Store FAQs</a></li>
+    <li><a data-lbl="global-licensing-policies" href="http://www.oracle.com/us/corporate/pricing/index.html">Global Licensing Policies</a></li>
+    <li><a data-lbl="price-lists" href="http://www.oracle.com/us/corporate/pricing/price-lists/index.html">Price Lists</a></li>
+</ul>
+<h5><a class="lnk-icon lnk-lock" data-lbl="partner-store" href="https://partnerstore.oracle.com/">Partner Store</a></h5>
+<ul data-lbl="partner-store">
+    <li><a data-lbl="place-orders" href="http://www.oracle.com/partners/en/partner-with-oracle/market-and-sell/opn-market-sell-mc-1959014.html#cw01step-3">Place Orders</a></li>
+    <li><a data-lbl="register-deals" href="http://www.oracle.com/partners/en/partner-with-oracle/market-and-sell/opn-market-sell-mc-1959014.html#cw01step-2">Register Deals</a></li>
+</ul>
+</div>
+<!-- /Column #4 --></div>
+</div></li>
+    <li><a data-lbl="support" href="http://www.oracle.com/us/support/index.html" data-trackas="hnav" class="u01nav">
+    <h3>Support</h3>
+    <div class="u01z1"><div class="u01z2"></div></div></a><div id="menu-support" class="u01menu" data-trackas="hnav" style="display: none;">
+
+<div class="u01w1" data-lbl="support"><!-- Banner Area -->
+<div class="u01w4">
+<div class="u01w5" data-lbl="spotlight">
+<h5 class="u01bar">Spotlight</h5>
+<ul>
+    <li><a data-lbl="oracle-premier-support" href="http://www.oracle.com/us/support/premier/overview/index.html">Oracle Premier Support</a></li>
+    <li><a data-lbl="advanced-customer-support" href="http://www.oracle.com/us/support/advanced-customer-services/overview/index.html">Advanced Customer Support</a></li>
+    <li><a data-lbl="my-oracle-support" href="http://www.oracle.com/us/support/software/premier/my-oracle-support-068523.html">My Oracle Support</a></li>
+    <li><a data-lbl="oracle-support-best-practices" href="http://www.oracle.com/us/support/best-practices/overview/index.html">Oracle Support Best Practices</a></li>
+</ul>
+</div>
+<div class="u01w5 u01w5bannerimg" data-lbl="spotlight"><a data-lbl="my-oracle-support-promo" href="http://www.oracle.com/us/support/software/premier/my-oracle-support-068523.html"><img alt="Oracle Support" data-imgpath="/us/assets/need_help_bn.jpg"></a></div>
+</div>
+<!-- /Banner Area --><!-- Column #1 -->
+<div class="u01w6">
+<h5><a data-lbl="support-services" href="http://www.oracle.com/us/support/index.html">Support Services</a></h5>
+<ul data-lbl="support-services">
+    <li><a data-lbl="oracle-premier-support" href="http://www.oracle.com/us/support/premier/overview/index.html">Oracle Premier Support</a></li>
+    <li><a data-lbl="oracle-advanced-customer-support" href="http://www.oracle.com/us/support/advanced-customer-services/overview/index.html">Oracle Advanced Customer Support</a></li>
+    <li><a class="u01seeall" data-lbl="see-all-support-services" href="http://www.oracle.com/us/support/index.html">See All...</a></li>
+</ul>
+<h5 class="u01headingonly"><a data-lbl="oracle-support-best-practices" href="http://www.oracle.com/us/support/best-practices/overview/index.html">Oracle Support Best Practices</a></h5>
+<h5 class="u01headingonly"><a data-lbl="technical-support-policies" href="http://www.oracle.com/us/support/policies/index.html">Technical Support Policies</a></h5>
+<h5 class="u01headingonly"><a data-lbl="lifetime-support-policy" href="http://www.oracle.com/us/support/lifetime-support/index.html">Lifetime Support Policy</a></h5>
+</div>
+<!-- /Column #1 --><!-- Column #2 -->
+<div class="u01w6">
+<h5><a data-lbl="my-oracle-support" href="https://support.oracle.com/">My Oracle Support</a></h5>
+<ul data-lbl="my-oracle-support">
+    <li><a data-lbl="knowledgebase" href="https://support.oracle.com/epmos/faces/KmHome">Knowledgebase</a></li>
+    <li><a data-lbl="community" href="https://community.oracle.com/community/support">Community</a></li>
+    <li><a data-lbl="patches-and-updates" href="https://support.oracle.com/epmos/faces/PatchHome">Patches and Updates</a></li>
+    <li><a data-lbl="certifications" href="https://support.oracle.com/epmos/faces/ui/certify/CertifyHome.jspx">Certifications</a></li>
+    <li><a data-lbl="service-requests" href="https://support.oracle.com/epmos/faces/SrHome">Service Requests</a></li>
+    <li><a data-lbl="welcome-center" href="https://support.oracle.com/epmos/faces/ui/km/DocumentDisplay.jspx?id=873313.1">Welcome Center</a></li>
+</ul>
+</div>
+<!-- /Column #2 --><!-- Column #3 -->
+<div class="u01w6">
+<h5 class="u01headingonly"><a data-lbl="acquired-company-support" href="http://www.oracle.com/us/support/support-integration/index.html">Global and Acquired Company Support Contacts</a></h5>
+<h5 class="u01headingonly"><a data-lbl="critical-patch-updates-and-security-alerts" href="http://www.oracle.com/technetwork/topics/security/alerts-086861.html">Critical Patch Updates and Security Alerts</a></h5>
+<h5 class="u01headingonly"><a data-lbl="customer-replaceable-units" href="http://www.oracle.com/us/support/cru-info-172780.html">Customer Replaceable Units</a></h5>
+<h5 class="u01headingonly"><a data-lbl="hardware-returns-/-recycling" href="http://www.oracle.com/us/products/applications/green/waste-and-product-returns-185031.html">Hardware Returns / Recycling</a></h5>
+<h5 class="u01headingonly"><a data-lbl="license-codes" href="http://www.oracle.com/us/support/licensecodes/index.html">License Codes</a></h5>
+<h5 class="u01headingonly"><a data-lbl="product-documentation" href="http://docs.oracle.com/" target="_blank">Product Documentation</a></h5>
+<h5 class="u01headingonly"><a data-lbl="software-security-assurance" href="http://www.oracle.com/us/support/assurance/index.html">Software Security Assurance</a></h5>
+</div>
+<!-- /Column #3 --><!-- Column #4 -->
+<div class="u01w6">
+<h5><a data-lbl="partners" href="http://www.oracle.com/partners/index.html">Partners</a></h5>
+<ul data-lbl="partners">
+    <li><a data-lbl="oracle-support" href="http://www.oracle.com/partners/en/partner-with-oracle/develop-solutions/index.html#cw01step-4">Oracle Support</a></li>
+    <li><a data-lbl="support-services" href="http://www.oracle.com/partners/en/partner-with-oracle/oracle-support-services/secure/index.html">Support Services</a></li>
+    <li><a data-lbl="talk-to-a-partner-expert" href="http://www.oracle.com/partners/en/most-popular-resources/partner-business-center-1954023.html">Talk to a Partner Expert</a></li>
+</ul>
+</div>
+<!-- /Column #4 --></div>
+</div></li>
+    <li><a data-lbl="training" href="http://education.oracle.com/" data-trackas="hnav" class="u01nav">
+    <h3>Training</h3>
+    <div class="u01z1"><div class="u01z2"></div></div></a><div id="menu-training" class="u01menu" data-trackas="hnav" style="display: none;">
+
+<div class="u01w1" data-lbl="training"><!-- Banner Area -->
+<div class="u01w4">
+<div class="u01w5">
+<h5 class="u01bar">Spotlight</h5>
+<ul data-lbl="spotlight">
+    <li><a data-lbl="java-se-7-fundamentals" href="http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=609&get_params=dc:D67236GC20,p_preview:N" target="_blank">Java SE7 Fundamentals</a></li>
+    <li><a data-lbl="java-se7-programming" href="http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=609&get_params=dc:D67240GC20,p_preview:N" target="_blank">Java SE7 Programming</a></li>
+    <li><a data-lbl="java-se8-programming" href="http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=609&p_org_id=1001&lang=US&get_params=dc:D84838GC10,p_preview:N" target="_blank">Java SE8 Programming</a></li>
+    <li><a data-lbl="oracle-database-11g" href="http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=609&get_params=dc:D50102GC20,p_preview:N" target="_blank">Oracle Database 11<em>g</em>: Administration Workshop</a></li>
+    <li><a data-lbl="oracle-database-12c" href="http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=609&get_params=dc:D77758GC20,p_preview:N" target="_blank">Oracle Database 12<em>c</em>: New Features for Admins</a></li>
+    <li><a data-lbl="introduction-to-sql" href="http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=609&get_params=dc:D80174GC10,p_preview:N" target="_blank">Oracle Database: Introduction to SQL</a></li>
+</ul>
+</div>
+<div class="u01w5 u01w5bannerimg" data-lbl="spotlight"><a data-lbl="oracle-university-promo" href="http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=600&intcmp=WWOUOCOMTOPNAVTOD" target="_blank"><img width="131" height="130" alt="Oracle Training on Demand" data-imgpath="http://www.oracleimg.com/us/assets/trainingondemand-ou-bnr-1916630.png"></a></div>
+</div>
+<!-- /Banner Area --><!-- Column #1 -->
+<div class="u01w6">
+<h5 class="u01headingonly"><a data-lbl="100percent-student-satisfaction" href="http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=94" target="_blank">100% Student Satisfaction</a></h5>
+<h5 class="u01headingonly"><a data-lbl="course-schedule" href="http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=392" target="_blank">Course Schedule</a></h5>
+<h5><a data-lbl="training-formats" href="http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=69" target="_blank">Training Formats</a></h5>
+<ul data-lbl="training-formats">
+    <li><a data-lbl="classroom" href="http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=33" target="_blank">Classroom</a></li>
+    <li><a data-lbl="discount-packages" href="http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=655" target="_blank">Discount Packages</a></li>
+    <li><a data-lbl="live-virtual-class" href="http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=233" target="_blank">Live Virtual Class</a></li>
+    <li><a data-lbl="oracle-learning-streams" href="http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=745" target="_blank">Oracle Learning Streams</a></li>
+    <li><a data-lbl="self-study-cd-rom" href="http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=35" target="_blank">Self-Study CD-ROM</a></li>
+    <li><a data-lbl="training-on-demand" href="http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=600" target="_blank">Training On Demand</a></li>
+    <li><a data-lbl="unlimited-learning-subscription" href="http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=746" target="_blank">Unlimited Learning Subscription</a></li>
+    <li><a data-lbl="user-adoption-services" href="http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=134" target="_blank">User Adoption Services</a></li>
+    <li><a class="u01seeall" data-lbl="see-all-training-formats" href="http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=69" target="_blank">See All...</a></li>
+</ul>
+</div>
+<!-- /Column #1 --><!-- Column #2 -->
+<div class="u01w6">
+<h5 class="u01headingonly"><a data-lbl="learning-paths" href="http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=15" target="_blank">Learning Paths</a></h5>
+<h5 class="u01headingonly"><a data-lbl="training-by-job-role" href="http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getjobpage?page_id=306&p_jobrole_id=1" target="_blank">Training by Job Role</a></h5>
+</div>
+<!-- /Column #2 --><!-- Column #3 -->
+<div class="u01w6">
+<h5><a data-lbl="certification-program" href="http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=39" target="_blank">Certification Program</a></h5>
+<ul data-lbl="certification-program">
+    <li><a data-lbl="become-certified" href="http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=73" target="_blank">Become Certified</a></li>
+    <li><a data-lbl="certification-benefits" href="http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=659" target="_blank">Certification Benefits</a></li>
+    <li><a data-lbl="certification-paths" href="http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=141" target="_blank">Certification Paths</a></li>
+    <li><a data-lbl="certview" href="https://education.oracle.com/pls/eval-eddap-dcd/ocp_interface.ocp_candidate_login?p_include=Y" target="_blank">CertView</a></li>
+    <li><a data-lbl="purchase-a-voucher" href="http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=156" target="_blank">Purchase a Voucher</a></li>
+    <li><a class="u01seeall" data-lbl="see-all-certification-program" href="http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=39" target="_blank">See All...</a></li>
+</ul>
+</div>
+<!-- /Column #3 --><!-- Column #4 -->
+<div class="u01w6">
+<h5 class="u01headingonly"><a data-lbl="training-locations" href="http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=317" target="_blank">Training Locations</a></h5>
+<h5 class="u01headingonly"><a data-lbl="contact-oracle-university" href="http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=225" target="_blank">Contact Oracle University</a></h5>
+<h5><a data-lbl="partners" href="http://www.oracle.com/partners/index.html">Partners</a></h5>
+<ul data-lbl="partners">
+    <li><a data-lbl="partner-training" href="http://www.oracle.com/partners/en/partner-with-oracle/training/index.html">Partner Training</a></li>
+</ul>
+</div>
+<!-- /Column #4 --></div>
+</div></li>
+    <li><a data-lbl="partners" href="http://www.oracle.com/partners/index.html" data-trackas="hnav" class="u01nav">
+    <h3>Partners</h3>
+    <div class="u01z1"><div class="u01z2"></div></div></a><div id="menu-partners" class="u01menu" data-trackas="hnav" style="display: none;">
+
+<div class="u01w1" data-lbl="partners"><!-- Banner Area -->
+<div class="u01w4">
+<div class="u01w5 u01w5bannerimg" data-lbl="spotlight"><a data-lbl="OPN-specialized-partner-promo" href="https://solutions.oracle.com/scwar/scr/AboutPartners/index.html"><img alt="OPN Specialized Partner" data-imgpath="/us/assets/39486_flyout_bnrs_v1.jpg"></a></div>
+</div>
+<!-- /Banner Area --><!-- Column #1 -->
+<div class="u01w6">
+<h5 class="u01headingonly"><a data-lbl="find-a-partner" href="https://solutions.oracle.com/">Find a Partner</a></h5>
+<ul data-lbl="find-a-partner">
+    <li><a data-lbl="partner-solutions" href="https://solutions.oracle.com/scwar/scr/index.html?canned_search=SP_LOC_ALL#solutions-tab">Partner Solutions</a></li>
+    <li><a data-lbl="specialized-partners" href="https://solutions.oracle.com/scwar/scr/AboutPartners/index.html#specialized-partners">Specialized Partners</a></li>
+    <li><a data-lbl="oracle-exastack-ready-and-optimized-partners" href="https://solutions.oracle.com/scwar/scr/AboutPartners/index.html#exastack-ready">Oracle Exastack Ready and Optimized Partners</a></li>
+    <li><a data-lbl="oracle-validated-integration" href="https://solutions.oracle.com/scwar/scr/AboutPartners/index.html#validated-integration">Oracle Validated Integration</a></li>
+    <li><a data-lbl="oracle-accelerate" href="https://solutions.oracle.com/scwar/scr/AboutPartners/index.html#midsized-companies">Oracle Accelerate</a></li>
+    <li><a data-lbl="oracle-cloud-marketplace" href="https://cloud.oracle.com/marketplace">Oracle Cloud Marketplace</a></li>
+</ul>
+</div>
+<!-- /Column #1 --><!-- Column #2 -->
+<div class="u01w6">
+<h5><a data-lbl="partner-with-oracle" href="http://www.oracle.com/partners/en/partner-with-oracle/index.html">Partner with Oracle</a></h5>
+<ul data-lbl="partner-with-oracle">
+    <li><a data-lbl="join-the-oracle-partnernetwork" href="http://www.oracle.com/partners/en/partner-with-oracle/get-started/index.html#cw01step-1">Join the Oracle PartnerNetwork</a></li>
+    <li><a data-lbl="levels-and-benefits" href="http://www.oracle.com/partners/en/partner-with-oracle/get-started/index.html#cw01step-2">Levels and Benefits</a></li>
+    <li><a data-lbl="get-specialized" href="http://www.oracle.com/partners/en/partner-with-oracle/get-started/index.html#cw01step-3">Get Specialized</a></li>
+    <li><a data-lbl="get-exastack-certified" href="http://www.oracle.com/partners/en/partner-with-oracle/develop-solutions/index.html#cw01step-3">Get Exastack Certified</a></li>
+    <li><a data-lbl="manage-membership" href="http://www.oracle.com/partners/en/partner-with-oracle/manage-membership/index.html">Manage Membership</a></li>
+    <li><a data-lbl="develop-solutions" href="http://www.oracle.com/partners/en/partner-with-oracle/develop-solutions/index.html">Develop Solutions</a></li>
+    <li><a data-lbl="market-and-sell" href="http://www.oracle.com/partners/en/partner-with-oracle/market-and-sell/index.html">Market and Sell</a></li>
+    <li><a class="lnk-icon lnk-lock" data-lbl="pricing-and-licensing" href="http://www.oracle.com/partners/secure/sales/pricing-licensing/index.html">Pricing and Licensing</a></li>
+    <li><a data-lbl="agreements-and-policies" href="http://www.oracle.com/partners/en/partner-with-oracle/manage-membership/index.html#cw01step-4">Agreements and Policies</a></li>
+</ul>
+</div>
+<!-- /Column #2 --><!-- Column #3 -->
+<div class="u01w6">
+<h5 class="u01headingonly"><a data-lbl="partner-product-resources" href="http://www.oracle.com/partners/en/products/index.html">Partner Product Resources</a></h5>
+<ul data-lbl="partner-product-resources">
+    <li><a href="http://www.oracle.com/partners/en/products/database/index.html" data-lbl="database">Database</a></li>
+    <li><a href="http://www.oracle.com/partners/en/products/middleware/index.html" data-lbl="middleware">Middleware</a></li>
+    <li><a href="http://www.oracle.com/partners/en/products/applications/index.html" data-lbl="applications">Applications</a></li>
+    <li><a href="http://www.oracle.com/partners/en/products/servers-and-storage/index.html" data-lbl="server-and-storage-systems">Server and Storage Systems</a></li>
+    <li><a href="http://www.oracle.com/partners/en/products/engineered-systems/index.html" data-lbl="engineered-systems">Engineered Systems</a></li>
+    <li><a href="http://www.oracle.com/partners/en/products/industries/index.html" data-lbl="industries">Industries</a></li>
+    <li><a href="http://www.oracle.com/partners/en/products/cloud-solutions/index.html" data-lbl="cloud-solutions">Cloud Solutions</a></li>
+</ul>
+</div>
+<!-- /Column #3 --><!-- Column #4 -->
+<div class="u01w6">
+<h5 class="u01headingonly"><a data-lbl="partner-training" href="http://www.oracle.com/partners/en/partner-with-oracle/training/index.html">Partner Training</a></h5>
+<ul data-lbl="partner-training">
+    <li><a data-lbl="become-a-specialist" href="http://www.oracle.com/partners/en/partner-with-oracle/training/index.html#cw01step-1">Become a Specialist</a></li>
+    <li><a data-lbl="access-training" href="http://www.oracle.com/partners/en/partner-with-oracle/training/index.html#cw01step-2">Access Training</a></li>
+    <li><a data-lbl="track-progress" href="http://www.oracle.com/partners/en/partner-with-oracle/training/index.html#cw01step-3">Track Progress</a></li>
+    <li><a href="http://www.oracle.com/partners/en/partner-with-oracle/training/index.html#cw01step-4" data-lbl="register-for-exams">Register for Exams</a></li>
+</ul>
+<h5 class="u01headingonly"><a data-lbl="talk-to-partner-expert" href="http://www.oracle.com/partners/en/most-popular-resources/partner-business-center-1954023.html">Talk to a Partner Expert</a></h5>
+</div>
+<!-- /Column #4 --></div>
+</div></li>
+    <li><a data-lbl="about" href="http://www.oracle.com/us/corporate/index.html" data-trackas="hnav" class="u01nav">
+    <h3>About</h3>
+    <div class="u01z1"><div class="u01z2"></div></div></a><div id="menu-about" class="u01menu" data-trackas="hnav" style="display: none;">
+
+<div class="u01w1" data-lbl="about"><!-- Banner Area -->
+<div class="u01w4">
+<div class="u01w5 u01w5bannerimg" data-lbl="spotlight"><a data-lbl="the-big-picture-promo" href="http://www.oracle.com/us/corporate/story/index.html"><img alt="About Us" data-imgpath="http://www.oracleimg.com/us/assets/about-spotlight-promo.jpg"></a></div>
+</div>
+<!-- /Banner Area --><!-- Column #1 -->
+<div class="u01w6">
+<h5><a data-lbl="company-information" href="http://www.oracle.com/us/corporate/index.html">Company Information</a></h5>
+<ul data-lbl="company-information">
+    <li><a data-lbl="acquisitions" href="http://www.oracle.com/us/corporate/acquisitions/index.html">Acquisitions</a></li>
+    <li><a data-lbl="analyst-relations" href="https://www.oracle.com/corporate/analystrelations/index.html">Analyst Relations</a></li>
+    <li><a data-lbl="board-of-directors" href="http://www.oracle.com/us/corporate/press/BoardofDirectors/index.html">Board of Directors</a></li>
+    <li><a data-lbl="corporate-citizenship" href="http://www.oracle.com/us/corporate/citizenship/index.html">Corporate Citizenship</a></li>
+    <li><a data-lbl="executives" href="http://www.oracle.com/us/corporate/press/Executives/index.html">Executives</a></li>
+    <li><a data-lbl="investor-relations" href="http://investor.oracle.com/overview/highlights/default.aspx">Investor Relations</a></li>
+    <li><a data-lbl="oracles-mission-and-vision" href="http://www.oracle.com/us/corporate/story/index.html">Oracle's Mission and Vision</a></li>
+</ul>
+</div>
+<!-- /Column #1 --><!-- Column #2 -->
+<div class="u01w6">
+<h5><a data-lbl="news-and-events" href="http://www.oracle.com/us/corporate/index.html#news">News and Events</a></h5>
+<ul data-lbl="news-and-events">
+    <li><a data-lbl="events-calendar" href="http://events.oracle.com/search/search?group=Events&keyword=">Events Calendar</a></li>
+    <li><a data-lbl="features" href="http://www.oracle.com/us/corporate/features/index.html">Features</a></li>
+    <li><a data-lbl="newsroom" href="https://www.oracle.com/corporate/press/index.html">Newsroom</a></li>
+</ul>
+<h5>Customers and Partners</h5>
+<ul data-lbl="customers-and-partners">
+    <li><a data-lbl="customer-and-partner-successes" href="http://www.oracle.com/search/customers">Customer and Partner Successes</a></li>
+    <li><a data-lbl="oracle-customer-programs" href="http://www.oracle.com/us/corporate/customers/overview/index.html">Oracle Customer Programs</a></li>
+    <li><a data-lbl="customer-visit-center" href="http://www.oracle.com/us/corporate/cvc/index.html">Customer Visit Center</a></li>
+    <li><a data-lbl="oracle-partnernetwork" href="http://www.oracle.com/partners/en/index.html">Oracle PartnerNetwork</a></li>
+</ul>
+</div>
+<!-- /Column #2 --><!-- Column #3 -->
+<div class="u01w6">
+<h5>Communications</h5>
+<ul data-lbl="communications">
+    <li><a data-lbl="blogs" href="http://www.oracle.com/us/corporate/blogs/index.html">Blogs</a></li>
+    <li><a data-lbl="java-magazine" href="http://www.oracle.com/technetwork/java/javamagazine/index.html"><em>Java Magazine</em></a></li>
+    <li><a data-lbl="subscriptions" href="http://www.oracle.com/us/syndication/subscribe/index.html">Subscriptions</a></li>
+    <li><a data-lbl="oracle-magazine" href="http://www.oracle.com/technetwork/oramag/magazine/home/index.html"><em>Oracle Magazine</em></a></li>
+    <li><a data-lbl="podcasts" href="http://www.oracle.com/us/syndication/podcasts/index.html">Podcasts</a></li>
+    <li><a data-lbl="profit-magazine" href="http://www.oracle.com/us/corporate/profit/index.html"><em>Profit</em> Magazine</a></li>
+    <li><a data-lbl="social-media-directory" href="http://www.oracle.com/us/social-media/facebook/index.html">Social Media Directory</a></li>
+    <li><a data-lbl="videos" href="http://medianetwork.oracle.com/media/">Videos</a></li>
+</ul>
+</div>
+<!-- /Column #3 --><!-- Column #4 -->
+<div class="u01w6">
+<h5><a data-lbl="careers" href="https://www.oracle.com/corporate/careers/index.html">Careers</a></h5>
+<ul data-lbl="careers">
+    <li><a data-lbl="college-recruiting" href="http://www.oracle.com/us/corporate/careers/college/index.html">College Recruiting</a></li>
+    <li><a data-lbl="diversity-and-inclusion" href="http://www.oracle.com/us/corporate/careers/diversity/index.html">Diversity and Inclusion</a></li>
+    <li><a data-lbl="internship-opportunities" href="http://www.oracle.com/us/corporate/careers/college/internships/index.html">Internship Opportunities</a></li>
+    <li><a data-lbl="internships-for-injured-vets" href="http://www.oracle.com/us/corporate/careers/diversity/veterans-programs/overview/index.html">Internships for Injured Vets</a></li>
+    <li><a data-lbl="search-for-a-job" href="https://oracle.taleo.net/careersection/2/jobsearch.ftl?lang=en">Search for a Job</a></li>
+</ul>
+</div>
+<!-- /Column #4 --></div>
+</div></li>
+    <li class="u01btn"><div class="u01w7"><a data-lbl="oracletechnologynetwork" href="http://www.oracle.com/technetwork/index.html" data-trackas="hnav" class="u01btn">
+    <h3>OTN</h3>
+    </a><div class="u01z1"><div class="u01z2"></div></div></div><div id="menu-otn" class="u01menu" data-trackas="hnav" style="display: none;">
+
+<div class="u01w1" data-lbl="oracletechnologynetwork"><!-- Banner Area -->
+<div class="u01w4">
+<div class="u01w5">
+<h5 class="u01bar">Resources for</h5>
+<ul data-lbl="resources-for">
+    <li><a data-lbl="java-developers" href="http://www.oracle.com/technetwork/java/index.html">Java Developers</a></li>
+    <li><a data-lbl="database-admins-and-developers" href="http://www.oracle.com/technetwork/dbadev/index.html">Database Admins and Developers</a></li>
+    <li><a data-lbl="system-admins-and-developers" href="http://www.oracle.com/technetwork/systems/index.html">System Admins and Developers</a></li>
+    <li><a data-lbl="architects" href="http://www.oracle.com/technetwork/architect/index.html">Architects</a></li>
+</ul>
+</div>
+</div>
+<!-- /Banner Area --><!-- Column #1 -->
+<div class="u01w6">
+<h5 class="u01headingonly"><a data-lbl="become-a-member" href="http://www.oracle.com/technetwork/community/join/overview/index.html">Become a Member</a></h5>
+<h5><a data-lbl="downloads" href="http://www.oracle.com/technetwork/indexes/downloads/index.html">Downloads</a></h5>
+<ul data-lbl="downloads">
+    <li><a data-lbl="database" href="http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html">Database</a></li>
+    <li><a data-lbl="oracle-fusion-middleware" href="http://www.oracle.com/technetwork/middleware/fusion-middleware/downloads/index.html">Oracle Fusion Middleware</a></li>
+    <li><a data-lbl="oracle-enterprise-manager" href="http://www.oracle.com/technetwork/oem/downloads/index.html">Oracle Enterprise Manager</a></li>
+    <li><a data-lbl="developer-tools" href="http://www.oracle.com/technetwork/developer-tools/index.html">Developer Tools</a></li>
+    <li><a data-lbl="java" href="http://www.oracle.com/technetwork/indexes/downloads/index.html#java">Java</a></li>
+    <li><a class="u01seeall" data-lbl="see-all-downloads" href="http://www.oracle.com/technetwork/indexes/downloads/index.html">See All...</a></li>
+</ul>
+<h5 class="u01headingonly"><a data-lbl="sample-code" href="http://www.oracle.com/technetwork/indexes/samplecode/index.html">Sample Code</a></h5>
+<h5 class="u01headingonly"><a data-lbl="prebuilt-developer-vms" href="http://www.oracle.com/technetwork/community/developer-vm/index.html">Prebuilt Developer VMs</a></h5>
+</div>
+<!-- /Column #1 --><!-- Column #2 -->
+<div class="u01w6">
+<h5><a data-lbl="documentation" href="http://docs.oracle.com/" target="_blank">Documentation</a></h5>
+<ul data-lbl="documentation">
+    <li><a data-lbl="database" href="http://docs.oracle.com/en/database/" target="_blank">Database</a></li>
+    <li><a data-lbl="oracle-fusion-middleware" href="http://docs.oracle.com/en/middleware/" target="_blank">Oracle Fusion Middleware</a></li>
+    <li><a data-lbl="oracle-enterprise-manager" href="http://docs.oracle.com/en/enterprise-manager/" target="_blank">Oracle Enterprise Manager</a></li>
+    <li><a data-lbl="applications-technology" href="http://docs.oracle.com/en/applications/" target="_blank">Applications Technology</a></li>
+    <li><a data-lbl="sun-documentation" href="http://www.oracle.com/technetwork/indexes/documentation/index.html#legacysun">Sun Documentation</a></li>
+    <li><a class="u01seeall" data-lbl="see-all-documentation" href="http://docs.oracle.com/" target="_blank">See All...</a></li>
+</ul>
+<h5 class="u01headingonly"><a data-lbl="technology-network-blog" href="http://blogs.oracle.com/otn/">Technology Network Blog</a></h5>
+<h5 class="u01headingonly"><a data-lbl="oracle-wikis" href="https://wikis.oracle.com/">Oracle Wikis</a></h5>
+<h5><a data-lbl="discussion-forums" href="https://community.oracle.com/welcome">Discussion Forums</a></h5>
+<ul data-lbl="discussion-forums">
+    <li><a data-lbl="database-and-sql" href="https://community.oracle.com/community/database/">Database and SQL</a></li>
+    <li><a data-lbl="oracle-fusion-middleware" href="https://community.oracle.com/community/fusion_middleware">Oracle Fusion Middleware</a></li>
+    <li><a data-lbl="oracle-enterprise-manager" href="https://community.oracle.com/community/archived_forums/enterprise_manager_5">Oracle Enterprise Manager</a></li>
+    <li><a data-lbl="developer-tools" href="https://community.oracle.com/community/development_tools">Developer Tools</a></li>
+    <li><a data-lbl="oracle-technology-network-feedback" href="https://community.oracle.com/community/technology_network_community/">Oracle Technology Network Feedback</a></li>
+    <li><a class="u01seeall" data-lbl="see-all-discussion-forums" href="https://community.oracle.com/welcome">See All...</a></li>
+</ul>
+</div>
+<!-- /Column #2 --><!-- Column #3 -->
+<div class="u01w6">
+<h5><a data-lbl="product-technical-info" href="http://www.oracle.com/technetwork/indexes/products/index.html">Product Technical Info</a></h5>
+<ul data-lbl="product-technical-info">
+    <li><a data-lbl="oracle-database" href="http://www.oracle.com/technetwork/database/enterprise-edition/overview/index.html">Oracle Database</a></li>
+    <li><a data-lbl="oracle-fusion-middleware" href="http://www.oracle.com/technetwork/middleware/fusion-middleware/overview/index.html">Oracle Fusion Middleware</a></li>
+    <li><a data-lbl="oracle-enterprise-manager" href="http://www.oracle.com/technetwork/oem/enterprise-manager/overview/index.html">Oracle Enterprise Manager</a></li>
+    <li><a data-lbl="applications-technology" href="http://www.oracle.com/technetwork/apps-tech/index.html">Applications Technology</a></li>
+    <li><a data-lbl="developer-tools" href="http://www.oracle.com/technetwork/indexes/products/index.html#tools">Developer Tools</a></li>
+    <li><a class="u01seeall" data-lbl="see-all-product-technical-info" href="http://www.oracle.com/technetwork/indexes/products/index.html">See All...</a></li>
+</ul>
+<h5 class="u01headingonly"><a data-lbl="articles" href="http://www.oracle.com/technetwork/articles/index.html">Articles</a></h5>
+<h5 class="u01headingonly"><a data-lbl="learning-library" href="http://www.oracle.com/goto/oll">Learning Library</a></h5>
+</div>
+<!-- /Column #3 --><!-- Column #4 -->
+<div class="u01w6">
+<h5><a data-lbl="topics" href="http://www.oracle.com/technetwork/topics/index.html">Topics</a></h5>
+<ul data-lbl="topics">
+    <li><a data-lbl="big-data" href="http://www.oracle.com/technetwork/topics/bigdata/whats-new/index.html">Big Data</a></li>
+    <li><a data-lbl="cloud" href="http://www.oracle.com/technetwork/topics/cloud/index.html">Cloud</a></li>
+    <li><a data-lbl="new-to-java" href="http://www.oracle.com/technetwork/topics/newtojava/overview/index.html">New to Java</a></li>
+    <li><a data-lbl="security" href="http://www.oracle.com/technetwork/topics/security/whatsnew/index.html">Security</a></li>
+    <li><a data-lbl="virtualization" href="http://www.oracle.com/technetwork/topics/virtualization/whatsnew/index.html">Virtualization</a></li>
+    <li><a class="u01seeall" data-lbl="see-all-topics" href="http://www.oracle.com/technetwork/topics/index.html">See All...</a></li>
+</ul>
+<h5 class="u01headingonly"><a data-lbl="newsletters" href="http://www.oracle.com/us/syndication/subscribe/index.html#tech">Newsletters</a></h5>
+<h5 class="u01headingonly"><a data-lbl="events" href="http://events.oracle.com/search/search?start=&pageHitCount=10&group=Events&keyword=Developer">Events</a></h5>
+<h5 class="u01headingonly"><a data-lbl="oracle-magazine" href="http://www.oracle.com/technetwork/oramag/magazine/home/index.html">Oracle Magazine</a></h5>
+<h5 class="u01headingonly"><a data-lbl="java-magazine" href="http://www.oracle.com/technetwork/java/javamagazine/index.html">Java Magazine</a></h5>
+</div>
+<!-- /Column #4 --></div>
+</div></li>
+</ul><div class="u01z3"></div>
+</div>
+<!-- /U01v0 -->
+ 
+			<!-- SS_END_SNIPPET(fragment42,ocomheader)-->
+  <!--SS_BEGIN_SNIPPET(fragment29,2)-->
+	
+	<!--**override root for testing purposes:**-->
+	<!--** Header Logo ** -->
+	<!--** Header Search ** -->
+	<!--** Welcome SignIn ** -->
+	 
+	
+	<!--** Footer ** -->
+	
+   
+    
+<!--** Header Logo ** -->
+             
+    
+
+  <!-- MOSAIC -->
+<!-- Communities-->
+
+<!-- User Category -->
+ 
+<!-- User Intrest -->
+<!-- Navigation starts here -->
+     
+          
+                    
+        
+        
+          
+
+        
+      
+      
+     
+    
+     
+        
+            
+            
+       
+        
+      
+     
+     
+        
+<!-- User Community SC code -->
+
+<!-- User Category SC code -->
+
+ 
+<!-- User Interest SC code -->
+
+
+	
+	    <div id="breadCrumb">
+	    <div class="breadCrumb_Left"></div>
+	    <div class="breadCrumb_Center">
+	    <div style="position:relative;">
+	    <span class="breadCrumb_Content">
+			    <a href="http://www.oracle.com/technetwork/index.html" onclick="navTrack(&#39;otn&#39;,&#39;en&#39;,&#39;breadcrumb&#39;,&#39;otnen&#39;);"><span class="red">Oracle</span> Technology Network</a>
+			    <span class="rightarrow"><img src="./Lesson 1  Socket Communications_files/rightarrow-066625.gif" alt=" "></span>
+			    <span class="active">Java</span>
+	    </span>
+	    </div>
+	    </div>
+	    <div class="breadCrumb_Right"></div>
+	    </div>
+
+			<!--SS_END_SNIPPET(fragment29,2)--> 
+      <div id="wrapper_lnav_maincont_rcol_foot">
+        <div id="Wrapper_FixedWidth_Leftnav">
+          
+<!--SS_BEGIN_SNIPPET(fragment25,2)-->
+	
+	<!--**override root for testing purposes:**-->
+	<!--** Header Logo ** -->
+	<!--** Header Search ** -->
+	<!--** Welcome SignIn ** -->
+	 
+	
+	<!--** Footer ** -->
+	
+   
+    
+<!--** Header Logo ** -->
+             
+    
+
+  <!-- MOSAIC -->
+<!-- Communities-->
+
+<!-- User Category -->
+ 
+<!-- User Intrest -->
+<!-- Navigation starts here -->
+     
+          
+                    
+        
+        
+          
+
+        
+      
+      
+     
+    
+     
+        
+            
+            
+       
+        
+      
+     
+     
+        
+<!-- User Community SC code -->
+
+<!-- User Category SC code -->
+
+ 
+<!-- User Interest SC code -->
+
+
+ <!--** retrieve input parameters: **-->
+		
+
+			
+		
+	<!--** retrieve the root node: **-->
+	<!--rootId = ssGetFirstNodeId(siteId)-->
+	<!--nodeId = rootId-->
+
+	<!--** retrieve the nodeLevel and set it to ssNumVertLevels **-->
+	<!--** retrieving the nodeLevel **-->
+			<!--** setting the nodelevel to ssNumVertLevels **-->
+                <!--** Get the section ID in custom section property **-->		
+				                             
+   
+                	
+                 
+                
+                <div class="topLeftNavBorder_li"><!--Spacer--></div> 
+                <div class="XMLLeftNav_li" id="XMLLeftNav">
+
+		
+ 
+		<!--** section link: **-->    
+		     
+		    		   
+ 
+											
+               <ul class="level01">
+				
+
+                          
+ 		            	
+				  <li><a class="level01_top_link_subnav" href="http://www.oracle.com/technetwork/java/javase/index.html" onclick="navTrack(&#39;otn&#39;,&#39;en&#39;,&#39;lnav&#39;,&#39;javase&#39;);" target="_top"><div>Java SE</div></a></li>
+                     	 			 							
+				
+
+                          
+ 		            	
+				  <li><a class="level01_top_link_subnav" href="http://www.oracle.com/technetwork/java/javaee/index.html" onclick="navTrack(&#39;otn&#39;,&#39;en&#39;,&#39;lnav&#39;,&#39;javaee&#39;);" target="_top"><div>Java EE</div></a></li>
+                     	 			 							
+				
+
+                          
+ 		            	
+				  <li><a class="level01_top_link_subnav" href="http://www.oracle.com/technetwork/java/javame/index.html" onclick="navTrack(&#39;otn&#39;,&#39;en&#39;,&#39;lnav&#39;,&#39;java_jme_x&#39;);" target="_top"><div>Java ME</div></a></li>
+                     	 			 							
+				
+
+                          
+ 		          			 							
+				
+
+                          
+ 		            	
+				  <li><a class="level01_top_link_subnav" href="http://www.oracle.com/technetwork/java/javasebusiness/index.html" onclick="navTrack(&#39;otn&#39;,&#39;en&#39;,&#39;lnav&#39;,&#39;javasebusines&#39;);" target="_top"><div>Java SE Support</div></a></li>
+                     	 			 							
+				
+
+                          
+ 		            	
+				  <li><a class="level01_top_link_subnav" href="http://www.oracle.com/technetwork/java/javaseproducts/index.html" onclick="navTrack(&#39;otn&#39;,&#39;en&#39;,&#39;lnav&#39;,&#39;java_advanced&#39;);" target="_top"><div>Java SE Advanced &amp; Suite</div></a></li>
+                     	 			 							
+				
+
+                          
+ 		            	
+				  <li><a class="level01_top_link_subnav" href="http://www.oracle.com/technetwork/java/embedded/index.html" onclick="navTrack(&#39;otn&#39;,&#39;en&#39;,&#39;lnav&#39;,&#39;javaembed&#39;);" target="_top"><div>Java Embedded</div></a></li>
+                     	 			 							
+				
+
+                          
+ 		          			 							
+				
+
+                          
+ 		          			 							
+				
+
+                          
+ 		            	
+				  <li><a class="level01_top_link_subnav" href="http://www.oracle.com/technetwork/java/javadb/index.html" onclick="navTrack(&#39;otn&#39;,&#39;en&#39;,&#39;lnav&#39;,&#39;javadb&#39;);" target="_top"><div>Java DB</div></a></li>
+                     	 			 							
+				
+
+                          
+ 		            	
+				  <li><a class="level01_top_link_subnav" href="http://www.oracle.com/technetwork/java/webtier/index.html" onclick="navTrack(&#39;otn&#39;,&#39;en&#39;,&#39;lnav&#39;,&#39;webtier_ph&#39;);" target="_top"><div>Web Tier</div></a></li>
+                     	 			 							
+				
+
+                          
+ 		            	
+				  <li><a class="level01_top_link_subnav" href="http://www.oracle.com/technetwork/java/javacard/index.html" onclick="navTrack(&#39;otn&#39;,&#39;en&#39;,&#39;lnav&#39;,&#39;javacard_x&#39;);" target="_top"><div>Java Card</div></a></li>
+                     	 			 							
+				
+
+                          
+ 		            	
+				  <li><a class="level01_top_link_subnav" href="http://www.oracle.com/technetwork/java/javatv/index.html" onclick="navTrack(&#39;otn&#39;,&#39;en&#39;,&#39;lnav&#39;,&#39;javatv_x&#39;);" target="_top"><div>Java TV</div></a></li>
+                     	 			 							
+				
+
+                          
+ 		          			 							
+				
+
+                          
+ 		          			 							
+				
+
+                          
+ 		          			 							
+				
+
+                          
+ 		          			 							
+				
+
+                          
+ 		            	
+				  <li><a class="level01_top_link_subnav" href="http://www.oracle.com/technetwork/java/newtojava/index.html" onclick="navTrack(&#39;otn&#39;,&#39;en&#39;,&#39;lnav&#39;,&#39;java_newtojava&#39;);" target="_top"><div>New to Java</div></a></li>
+                     	 			 							
+				
+
+                          
+ 		            	
+				  <li><a class="level01_top_link_subnav" href="http://www.oracle.com/technetwork/java/community/index.html" onclick="navTrack(&#39;otn&#39;,&#39;en&#39;,&#39;lnav&#39;,&#39;java_community&#39;);" target="_top"><div>Community</div></a></li>
+                     	 			 							
+				
+
+                          
+ 		            	
+				  <li><a class="level01_top_link_subnav" href="http://www.oracle.com/technetwork/java/javamagazine/index.html" onclick="navTrack(&#39;otn&#39;,&#39;en&#39;,&#39;lnav&#39;,&#39;javamag&#39;);" target="_top"><div>Java Magazine</div></a></li>
+                     	 			 							
+				
+
+                          
+ 		          			 							
+				
+
+                          
+ 		          			 							
+				
+		 </ul>										
+ 
+     	        </div>
+		<div class="botLeftNavBorder_li"><!--Spacer--></div>
+											
+	<!--** end of ExternalNavMultiV **-->
+
+
+			<!--SS_END_SNIPPET(fragment25,2)-->
+
+        </div>
+
+        <div id="Wrapper_FixedWidth_Centercontent">
+          <div class="pg0 pg0v0 pg0x1v0 pg0x1">
+            
+<!--SS_BEGIN_SNIPPET(fragment33,2)-->
+	
+				
+			
+			
+			
+
+
+
+
+
+
+			<!--SS_END_SNIPPET(fragment33,2)-->
+<script type="text/javascript">
+window['MULTIDDOCNAMECONFIG'] = { 
+show_addrowbutton: false, 
+primaryurl: 'OTN-LT-1COL-HP?MainContent=150442&RHS1=160036&RHS2=160044&RHS3=439418&RHS4=2164324&RHS5=&RHS6=&RHS7=&RHS8=&RHS9=&RHS10=&RHS11=&RHS12=&RHS13=&RHS14=&RHS15=&RHS16=&RHS17=', 
+rows: [ 
+{ 
+createnewxml_defaultmetadata_default: 'dDocTitle%3DRHS', 
+browse_querytext_default: 'xWebsiteObjectType <Matches> `Data File`', 
+show_createnewxmlbutton_default: true, 
+show_browsebutton_default: true, 
+
+createnewxml_defaultmetadata_override: 'dDocTitle%3DRHS', 
+browse_querytext_override: 'xWebsiteObjectType <Matches> `Data File`', 
+show_createnewxmlbutton_override: true, 
+show_browsebutton_override: true, 
+
+show_deletebutton: true 
+}, 
+{ 
+createnewxml_defaultmetadata_default: 'dDocTitle%3DRHS', 
+browse_querytext_default: 'xWebsiteObjectType <Matches> `Data File`', 
+show_createnewxmlbutton_default: true, 
+show_browsebutton_default: true, 
+
+createnewxml_defaultmetadata_override: 'dDocTitle%3DRHS', 
+browse_querytext_override: 'xWebsiteObjectType <Matches> `Data File`', 
+show_createnewxmlbutton_override: true, 
+show_browsebutton_override: true, 
+
+show_deletebutton: true 
+}, 
+{ 
+createnewxml_defaultmetadata_default: 'dDocTitle%3DRHS', 
+browse_querytext_default: 'xWebsiteObjectType <Matches> `Data File`', 
+show_createnewxmlbutton_default: true, 
+show_browsebutton_default: true, 
+
+createnewxml_defaultmetadata_override: 'dDocTitle%3DRHS', 
+browse_querytext_override: 'xWebsiteObjectType <Matches> `Data File`', 
+show_createnewxmlbutton_override: true, 
+show_browsebutton_override: true, 
+
+show_deletebutton: true 
+}, 
+{ 
+createnewxml_defaultmetadata_default: 'dDocTitle%3DRHS', 
+browse_querytext_default: 'xWebsiteObjectType <Matches> `Data File`', 
+show_createnewxmlbutton_default: true, 
+show_browsebutton_default: true, 
+
+createnewxml_defaultmetadata_override: 'dDocTitle%3DRHS', 
+browse_querytext_override: 'xWebsiteObjectType <Matches> `Data File`', 
+show_createnewxmlbutton_override: true, 
+show_browsebutton_override: true, 
+
+show_deletebutton: true 
+}, 
+{ 
+createnewxml_defaultmetadata_default: 'dDocTitle%3DRHS', 
+browse_querytext_default: 'xWebsiteObjectType <Matches> `Data File`', 
+show_createnewxmlbutton_default: true, 
+show_browsebutton_default: true, 
+
+createnewxml_defaultmetadata_override: 'dDocTitle%3DRHS', 
+browse_querytext_override: 'xWebsiteObjectType <Matches> `Data File`', 
+show_createnewxmlbutton_override: true, 
+show_browsebutton_override: true, 
+
+show_deletebutton: true 
+}, 
+{ 
+createnewxml_defaultmetadata_default: 'dDocTitle%3DRHS', 
+browse_querytext_default: 'xWebsiteObjectType <Matches> `Data File`', 
+show_createnewxmlbutton_default: true, 
+show_browsebutton_default: true, 
+
+createnewxml_defaultmetadata_override: 'dDocTitle%3DRHS', 
+browse_querytext_override: 'xWebsiteObjectType <Matches> `Data File`', 
+show_createnewxmlbutton_override: true, 
+show_browsebutton_override: true, 
+
+show_deletebutton: true 
+}, 
+{ 
+createnewxml_defaultmetadata_default: 'dDocTitle%3DRHS', 
+browse_querytext_default: 'xWebsiteObjectType <Matches> `Data File`', 
+show_createnewxmlbutton_default: true, 
+show_browsebutton_default: true, 
+
+createnewxml_defaultmetadata_override: 'dDocTitle%3DRHS', 
+browse_querytext_override: 'xWebsiteObjectType <Matches> `Data File`', 
+show_createnewxmlbutton_override: true, 
+show_browsebutton_override: true, 
+
+show_deletebutton: true 
+}, 
+{ 
+createnewxml_defaultmetadata_default: 'dDocTitle%3DRHS', 
+browse_querytext_default: 'xWebsiteObjectType <Matches> `Data File`', 
+show_createnewxmlbutton_default: true, 
+show_browsebutton_default: true, 
+
+createnewxml_defaultmetadata_override: 'dDocTitle%3DRHS', 
+browse_querytext_override: 'xWebsiteObjectType <Matches> `Data File`', 
+show_createnewxmlbutton_override: true, 
+show_browsebutton_override: true, 
+
+show_deletebutton: true 
+}, 
+{ 
+createnewxml_defaultmetadata_default: 'dDocTitle%3DRHS', 
+browse_querytext_default: 'xWebsiteObjectType <Matches> `Data File`', 
+show_createnewxmlbutton_default: true, 
+show_browsebutton_default: true, 
+
+createnewxml_defaultmetadata_override: 'dDocTitle%3DRHS', 
+browse_querytext_override: 'xWebsiteObjectType <Matches> `Data File`', 
+show_createnewxmlbutton_override: true, 
+show_browsebutton_override: true, 
+
+show_deletebutton: true 
+}, 
+{ 
+createnewxml_defaultmetadata_default: 'dDocTitle%3DRHS', 
+browse_querytext_default: 'xWebsiteObjectType <Matches> `Data File`', 
+show_createnewxmlbutton_default: true, 
+show_browsebutton_default: true, 
+
+createnewxml_defaultmetadata_override: 'dDocTitle%3DRHS', 
+browse_querytext_override: 'xWebsiteObjectType <Matches> `Data File`', 
+show_createnewxmlbutton_override: true, 
+show_browsebutton_override: true, 
+
+show_deletebutton: true 
+}, 
+{ 
+createnewxml_defaultmetadata_default: 'dDocTitle%3DRHS', 
+browse_querytext_default: 'xWebsiteObjectType <Matches> `Data File`', 
+show_createnewxmlbutton_default: true, 
+show_browsebutton_default: true, 
+
+createnewxml_defaultmetadata_override: 'dDocTitle%3DRHS', 
+browse_querytext_override: 'xWebsiteObjectType <Matches> `Data File`', 
+show_createnewxmlbutton_override: true, 
+show_browsebutton_override: true, 
+
+show_deletebutton: true 
+}, 
+{ 
+createnewxml_defaultmetadata_default: 'dDocTitle%3DRHS', 
+browse_querytext_default: 'xWebsiteObjectType <Matches> `Data File`', 
+show_createnewxmlbutton_default: true, 
+show_browsebutton_default: true, 
+
+createnewxml_defaultmetadata_override: 'dDocTitle%3DRHS', 
+browse_querytext_override: 'xWebsiteObjectType <Matches> `Data File`', 
+show_createnewxmlbutton_override: true, 
+show_browsebutton_override: true, 
+
+show_deletebutton: true 
+}, 
+{ 
+createnewxml_defaultmetadata_default: 'dDocTitle%3DRHS', 
+browse_querytext_default: 'xWebsiteObjectType <Matches> `Data File`', 
+show_createnewxmlbutton_default: true, 
+show_browsebutton_default: true, 
+
+createnewxml_defaultmetadata_override: 'dDocTitle%3DRHS', 
+browse_querytext_override: 'xWebsiteObjectType <Matches> `Data File`', 
+show_createnewxmlbutton_override: true, 
+show_browsebutton_override: true, 
+
+show_deletebutton: true 
+}, 
+{ 
+createnewxml_defaultmetadata_default: 'dDocTitle%3DRHS', 
+browse_querytext_default: 'xWebsiteObjectType <Matches> `Data File`', 
+show_createnewxmlbutton_default: true, 
+show_browsebutton_default: true, 
+
+createnewxml_defaultmetadata_override: 'dDocTitle%3DRHS', 
+browse_querytext_override: 'xWebsiteObjectType <Matches> `Data File`', 
+show_createnewxmlbutton_override: true, 
+show_browsebutton_override: true, 
+
+show_deletebutton: true 
+}, 
+{ 
+createnewxml_defaultmetadata_default: 'dDocTitle%3DRHS', 
+browse_querytext_default: 'xWebsiteObjectType <Matches> `Data File`', 
+show_createnewxmlbutton_default: true, 
+show_browsebutton_default: true, 
+
+createnewxml_defaultmetadata_override: 'dDocTitle%3DRHS', 
+browse_querytext_override: 'xWebsiteObjectType <Matches> `Data File`', 
+show_createnewxmlbutton_override: true, 
+show_browsebutton_override: true, 
+
+show_deletebutton: true 
+},
+{ 
+createnewxml_defaultmetadata_default: 'dDocTitle%3DRHS', 
+browse_querytext_default: 'xWebsiteObjectType <Matches> `Data File`', 
+show_createnewxmlbutton_default: true, 
+show_browsebutton_default: true, 
+
+createnewxml_defaultmetadata_override: 'dDocTitle%3DRHS', 
+browse_querytext_override: 'xWebsiteObjectType <Matches> `Data File`', 
+show_createnewxmlbutton_override: true, 
+show_browsebutton_override: true, 
+
+show_deletebutton: true 
+},  
+{ 
+createnewxml_defaultmetadata_default: 'dDocTitle%3DRHS', 
+browse_querytext_default: 'xWebsiteObjectType <Matches> `Data File`', 
+show_createnewxmlbutton_default: true, 
+show_browsebutton_default: true, 
+
+createnewxml_defaultmetadata_override: 'dDocTitle%3DRHS', 
+browse_querytext_override: 'xWebsiteObjectType <Matches> `Data File`', 
+show_createnewxmlbutton_override: true, 
+show_browsebutton_override: true, 
+
+show_deletebutton: true 
+}                    
+] 
+}; 
+</script>
+<style>
+  .sidebox h4 a:link {_width:178px;}
+  .sidebox h4 a:visited{_width:178px;}
+  .sidebox h4 a:hover {_width:178px;}
+</style>
+	<div class="orcl6w1"> 	
+	<div class="orcl6x0"></div> 
+	</div>
+<div class="orcl6w2">
+	<div class="orcl6w3">
+		
+						<h1>Lesson 1: Socket Communications</h1>
+<!-- content goes here -->
+<table width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tbody>
+        <tr>
+            <td valign="top" class="smaller">&nbsp;</td>
+            <td width="10">&nbsp;</td>
+            <td align="right" valign="bottom">
+            <div style="padding:0px;" class="sitelinks">
+            <table cellspacing="0" cellpadding="0" border="0">
+                <tbody>
+                    <tr>
+                        <td align="right" valign="bottom">&nbsp;</td>
+                        <td valign="bottom" nowrap="nowrap" class="smaller">&nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<strong>Lesson 1: Socket Communications</strong><br>
+<br>
+<p>[             <a href="http://www.oracle.com/technetwork/java/index-139917.html">&lt;&lt;BACK</a>] [             <a href="http://www.oracle.com/technetwork/java/index-139917.html#contents">CONTENTS</a>] [             <a href="http://www.oracle.com/technetwork/java/ui-140349.html">NEXT&gt;&gt;</a>]</p>
+<p><a href="http://www.oracle.com/technetwork/java/index-139917.html">Java Programming Language Basics, Part 1</a>, finished with a simple network communications example using the Remote Method Invocation (RMI) application programming interface (API). The RMI example allows multiple client programs to communicate with the same server program without any explicit code to do this because the RMI API is built on sockets and threads.</p>
+<p>This lesson presents a simple sockets-based program to introduce the concepts of sockets and multi-threaded programming. A multi-threaded program performs multiple tasks at one time such as fielding simultaneous requests from many client programs.</p>
+<ul>
+    <li><a href="http://www.oracle.com/technetwork/java/socket-140484.html#sockets">                What are Sockets and Threads?               </a></li>
+    <li><a href="http://www.oracle.com/technetwork/java/socket-140484.html#about">                About the Examples               </a></li>
+    <li><a href="http://www.oracle.com/technetwork/java/socket-140484.html#server">                Example 1: Server-Side Program               </a></li>
+    <li><a href="http://www.oracle.com/technetwork/java/socket-140484.html#client">                Example 1: Client-Side Program               </a></li>
+    <li><a href="http://www.oracle.com/technetwork/java/socket-140484.html#multi">                Example 2: Multithreaded Server Example               </a></li>
+    <li><a href="http://www.oracle.com/technetwork/java/socket-140484.html#more">                More Information               </a></li>
+</ul>
+<p>&nbsp;</p>
+<blockquote>            <strong>Note:</strong> See               <a href="http://www.oracle.com/technetwork/java/socket-140484.html#">Creating a Threaded Slide Show Applet</a> for another example of how multiple threads can be used in a program.           </blockquote>
+<div class="contentdivider">
+<table width="100%" cellspacing="0" cellpadding="0" border="0" class="grey4">
+    <tbody>
+        <tr>
+            <td><img width="1" height="4" border="0" src="./Lesson 1  Socket Communications_files/148611.gif" alt=" "></td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<a name="sockets" id="sockets"></a>
+<h3>What are Sockets and Threads?</h3>
+<p>A socket is a software endpoint that establishes bidirectional communication between a server program and one or more client programs. The socket associates the server program with a specific hardware port on the machine where it runs so any client program anywhere in the network with a socket associated with that same port can communicate with the server program.</p>
+<p><img align="left" width="221" height="151" src="./Lesson 1  Socket Communications_files/148791.gif" alt=""> A server program typically provides resources to a network of client programs. Client programs send requests to the server program, and the server program responds to the request.</p>
+<p>One way to handle requests from more than one client is to make the server program multi-threaded. A multi-threaded server creates a thread for each communication it accepts from a client. A thread is a sequence of instructions that run independently of the program and of any other threads.</p>
+<p>Using threads, a multi-threaded server program can accept a connection from a client, start a thread for that communication, and continue listening for requests from other clients.               <a name="about" id="about"></a></p>
+<h3>About the Examples</h3>
+<p>The examples for this lesson consist of two versions of the client and server program pair adapted from the               <a href="http://www.oracle.com/technetwork/java/socket-140484.html#">FileIO.java</a> application presented in               <a href="http://www.oracle.com/technetwork/java/data-142896.html">Part 1, Lesson 6: File Access and Permissions</a>.</p>
+<p>Example 1 sets up a client and server communication between one server program and one client program. The server program is not multi-threaded and cannot handle requests from more than one client.</p>
+<p>Example 2 converts the server program to a multi-threaded version so it can handle requests from more than one client.</p>
+<h4>Example 1: Client-Side Behavior</h4>
+<p>The               <a href="http://www.oracle.com/technetwork/java/socket-140484.html#">client program</a> presents a simple user interface and prompts for text input. When you click the               <code>Click Me</code> button, the text is sent to the server program. The client program expects an echo from the server and prints the echo it receives on its standard output.</p>
+<p><img width="222" height="128" src="./Lesson 1  Socket Communications_files/146416.gif" alt=""></p>
+<h4>Example 1: Server-Side Behavior</h4>
+<p>The               <a href="http://www.oracle.com/technetwork/java/socket-140484.html#">server program</a> presents a simple user interface, and when you click the               <code>Click Me</code> button, the text received from the client is displayed. The server echoes the text it receives whether or not you click the               <code>Click Me</code> button.</p>
+<p><img width="224" height="125" src="./Lesson 1  Socket Communications_files/146865.gif" alt=""></p>
+<p>&nbsp;</p>
+<h4>Example 1: Compile and Run</h4>
+<p>To run the example programs, start the server program first. If you do not, the client program cannot establish the socket connection. Here are the compiler and interpreter commands to compile and run the example.               <!-- BEGIN VCD7 CODE SAMPLE COMPONENT  --></p>
+<table width="100%" cellspacing="0" cellpadding="10" border="0" class="grey4">
+    <tbody>
+        <tr>
+            <td>
+            <pre>  javac SocketServer.java
+  javac SocketClient.java
+
+  java SocketServer
+  java SocketClient
+</pre>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<a name="server" id="server"></a>
+<h3>Example 1: Server-Side Program</h3>
+<p>The               <a href="http://www.oracle.com/technetwork/java/socket-140484.html#">server program</a> establishes a socket connection on Port 4321 in its               <code>listenSocket</code> method. It reads data sent to it and sends that same data back to the server in its               <code>actionPerformed</code> method.</p>
+<h4>listenSocket Method</h4>
+<p>The               <code>listenSocket</code> method creates a               <code>ServerSocket</code> object with the port number on which the server program is going to listen for client communications. The port number must be an available port, which means the number cannot be reserved or already in use. For example, Unix systems reserve ports 1 through 1023 for administrative functions leaving port numbers greater than 1024 available for use.               <!-- BEGIN VCD7 CODE SAMPLE COMPONENT  --></p>
+<table width="100%" cellspacing="0" cellpadding="10" border="0" class="grey4">
+    <tbody>
+        <tr>
+            <td>
+            <pre>public void listenSocket(){
+  try{
+    server = new ServerSocket(4321); 
+  } catch (IOException e) {
+    System.out.println("Could not listen on port 4321");
+    System.exit(-1);
+  }
+</pre>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<code>listenSocket</code><code>Socket</code><code>server.accept</code><code>Socket</code>
+<table width="100%" cellspacing="0" cellpadding="10" border="0" class="grey4">
+    <tbody>
+        <tr>
+            <td>
+            <pre>  try{
+    client = server.accept();
+  } catch (IOException e) {
+    System.out.println("Accept failed: 4321");
+    System.exit(-1);
+  }
+</pre>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<code>listenSocket</code><code>BufferedReader</code><code>client</code><code>PrintWriter</code>
+<table width="100%" cellspacing="0" cellpadding="10" border="0" class="grey4">
+    <tbody>
+        <tr>
+            <td>
+            <pre>  try{
+   in = new BufferedReader(new InputStreamReader(
+                           client.getInputStream()));
+   out = new PrintWriter(client.getOutputStream(), 
+                         true);
+  } catch (IOException e) {
+    System.out.println("Read failed");
+    System.exit(-1);
+  }
+}
+</pre>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<code>listenSocket</code>
+<table width="100%" cellspacing="0" cellpadding="10" border="0" class="grey4">
+    <tbody>
+        <tr>
+            <td>
+            <pre>    while(true){
+      try{
+        line = in.readLine();
+//Send data back to client
+        out.println(line);
+      } catch (IOException e) {
+        System.out.println("Read failed");
+        System.exit(-1);
+      }
+    }
+</pre>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<h4>actionPerformed Method</h4>
+<p>The               <code>actionPerformed</code> method is called by the Java platform for action events such as button clicks. This               <code>actionPerformed</code> method uses the text stored in the               <code>line</code> object to initialize the               <code>textArea</code> object so the retrieved text can be displayed to the end user.               <!-- BEGIN VCD7 CODE SAMPLE COMPONENT  --></p>
+<table width="100%" cellspacing="0" cellpadding="10" border="0" class="grey4">
+    <tbody>
+        <tr>
+            <td>
+            <pre>public void actionPerformed(ActionEvent event) {
+   Object source = event.getSource();
+
+   if(source == button){
+       textArea.setText(line);
+   }
+}
+</pre>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<a name="client" id="client"></a>
+<h3>Example 1: Client-Side Program</h3>
+<p>The               <a href="http://www.oracle.com/technetwork/java/socket-140484.html#">client program</a> establishes a connection to the server program on a particular host and port number in its               <code>listenSocket</code> method, and sends the data entered by the end user to the server program in its               <code>actionPerformed</code> method. The               <code>actionPerformed</code> method also receives the data back from the server and prints it to the command line.</p>
+<h4>listenSocket Method</h4>
+<p>The               <code>listenSocket</code> method first creates a               <code>Socket</code> object with the computer name (             <code>kq6py</code>) and port number (4321) where the server program is listening for client connection requests. Next, it creates a               <code>PrintWriter</code> object to send data over the socket connection to the server program. It also creates a               <code>BufferedReader</code> object to read the text sent by the server back to the client.               <!-- BEGIN VCD7 CODE SAMPLE COMPONENT  --></p>
+<table width="100%" cellspacing="0" cellpadding="10" border="0" class="grey4">
+    <tbody>
+        <tr>
+            <td>
+            <pre>public void listenSocket(){
+//Create socket connection
+   try{
+     socket = new Socket("kq6py", 4321);
+     out = new PrintWriter(socket.getOutputStream(), 
+                 true);
+     in = new BufferedReader(new InputStreamReader(
+                socket.getInputStream()));
+   } catch (UnknownHostException e) {
+     System.out.println("Unknown host: kq6py");
+     System.exit(1);
+   } catch  (IOException e) {
+     System.out.println("No I/O");
+     System.exit(1);
+   }
+}
+</pre>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<h4>actionPerformed Method</h4>
+<p>The               <code>actionPerformed</code> method is called by the Java platform for action events such as button clicks. This               <code>actionPerformed</code> method code gets the text in the               <code>Textfield</code> object and passes it to the               <code>PrintWriter</code> object, which then sends it over the socket connection to the server program.</p>
+<p>The               <code>actionPerformed</code> method then makes the               <code>Textfield</code> object blank so it is ready for more end user input. Lastly, it receives the text sent back to it by the server and prints the text out.               <!-- BEGIN VCD7 CODE SAMPLE COMPONENT  --></p>
+<table width="100%" cellspacing="0" cellpadding="10" border="0" class="grey4">
+    <tbody>
+        <tr>
+            <td>
+            <pre>public void actionPerformed(ActionEvent event){
+   Object source = event.getSource();
+
+   if(source == button){
+//Send data over socket
+      String text = textField.getText();
+      out.println(text);
+      textField.setText(new String(""));
+      out.println(text);
+   }
+//Receive text from server
+   try{
+     String line = in.readLine();
+     System.out.println("Text received: " + line);
+   } catch (IOException e){
+     System.out.println("Read failed");
+     System.exit(1);
+   }
+}  
+</pre>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<a name="multi" id="multi"></a>
+<h3>Example 2: Multithreaded Server Example</h3>
+<p>The example in its current state works between the server program and one client program only. To allow multiple client connections, the server program has to be converted to a               <a href="http://www.oracle.com/technetwork/java/socket-140484.html#">multithreaded server</a> program.</p>
+<p>&nbsp;</p>
+<table>
+    <tbody>
+        <tr>
+            <td width="200" valign="top"><img width="212" height="101" src="./Lesson 1  Socket Communications_files/145391.gif" alt="">
+            <div align="center">First Client</div>
+            <img width="212" height="101" src="./Lesson 1  Socket Communications_files/148446.gif" alt="">
+            <div align="center">Second Client</div>
+            <img width="212" height="101" src="./Lesson 1  Socket Communications_files/145418.gif" alt="">
+            <div align="center">Third Client</div>
+            </td>
+            <td valign="top"><img width="223" height="81" src="./Lesson 1  Socket Communications_files/146376.gif" alt=""></td>
+        </tr>
+    </tbody>
+</table>
+<p>In this example the               <code>listenSocket</code> method loops on the               <code>server.accept</code> call waiting for client connections and creates an instance of the               <code>ClientWorker</code> class for each client connection it accepts. The               <code>textArea</code> component that displays the text received from the client connection is passed to the               <code>ClientWorker</code> instance with the accepted client connection.               <!-- BEGIN VCD7 CODE SAMPLE COMPONENT  --></p>
+<table width="100%" cellspacing="0" cellpadding="10" border="0" class="grey4">
+    <tbody>
+        <tr>
+            <td>
+            <pre>public void listenSocket(){
+  try{
+    server = new ServerSocket(4444);
+  } catch (IOException e) {
+    System.out.println("Could not listen on port 4444");
+    System.exit(-1);
+  }
+  while(true){
+    ClientWorker w;
+    try{
+//server.accept returns a client connection
+      w = new ClientWorker(server.accept(), textArea);
+      Thread t = new Thread(w);
+      t.start();
+    } catch (IOException e) {
+      System.out.println("Accept failed: 4444");
+      System.exit(-1);
+    }
+  }
+}
+</pre>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<p>The important changes in this version of the server program over the non-threaded server program are the               <code>line</code> and               <code>client</code> variables are no longer instance variables of the server class, but are handled inside the               <code>ClientWorker</code> class.</p>
+<p>The               <code>ClientWorker</code> class implements the               <code>Runnable</code> interface, which has one method,               <code>run</code>. The               <code>run</code> method executes independently in each thread. If three clients request connections, three               <code>ClientWorker</code> instances are created, a thread is started for each               <code>ClientWorker</code> instance, and the               <code>run</code> method executes for each thread.</p>
+<p>In this example, the               <code>run</code> method creates the input buffer and output writer, loops on the input stream waiting for input from the client, sends the data it receives back to the client, and sets the text in the text area.               <!-- BEGIN VCD7 CODE SAMPLE COMPONENT  --></p>
+<table width="100%" cellspacing="0" cellpadding="10" border="0" class="grey4">
+    <tbody>
+        <tr>
+            <td>
+            <pre>class ClientWorker implements Runnable {
+  private Socket client;
+  private JTextArea textArea;
+
+//Constructor
+  ClientWorker(Socket client, JTextArea textArea) {
+    this.client = client;
+    this.textArea = textArea;
+  }
+
+  public void run(){
+    String line;
+    BufferedReader in = null;
+    PrintWriter out = null;
+    try{
+      in = new BufferedReader(new 
+        InputStreamReader(client.getInputStream()));
+      out = new 
+        PrintWriter(client.getOutputStream(), true);
+    } catch (IOException e) {
+      System.out.println("in or out failed");
+      System.exit(-1);
+    }
+
+    while(true){
+      try{
+        line = in.readLine();
+//Send data back to client
+        out.println(line);
+//Append data to text area
+        textArea.append(line);
+       }catch (IOException e) {
+        System.out.println("Read failed");
+        System.exit(-1);
+       }
+    }
+  }
+}
+</pre>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<code>JTextArea.append</code><code>JTextArea.append</code><code>textArea.append(line)</code><code>synchronized</code><code>run</code><code>textArea.append(line)</code><code>appendText(line)</code>
+<pre>  public synchronized void appendText(line){
+    textArea.append(line);
+  }
+</pre>
+<code>synchronized</code><code>textArea</code><code>textArea</code>
+<p>The               <code>finalize()</code> method is called by the Java virtual machine (JVM)* before the program exits to give the program a chance to clean up and release resources. Multi-threaded programs should close all               <code>Files</code> and               <code>Sockets</code> they use before exiting so they do not face resource starvation. The call to               <code>server.close()</code> in the               <code>finalize()</code> method closes the               <code>Socket</code> connection used by each thread in this program.               <!-- BEGIN VCD7 CODE SAMPLE COMPONENT  --></p>
+<table width="100%" cellspacing="0" cellpadding="10" border="0" class="grey4">
+    <tbody>
+        <tr>
+            <td>
+            <pre>  protected void finalize(){
+//Objects created in run method are finalized when
+//program terminates and thread exits
+     try{
+        server.close();
+    } catch (IOException e) {
+        System.out.println("Could not close socket");
+        System.exit(-1);
+    }
+  }
+</pre>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<a name="more" id="more"></a>
+<h3>More Information</h3>
+<p>You can find more information on sockets in the               <a href="http://docs.oracle.com/javase/tutorial/networking/sockets/index.html">All About Sockets</a> section in               <a href="http://docs.oracle.com/javase/tutorial/index.html">The Java Tutorial</a>.</p>
+<p>[             <a href="http://www.oracle.com/technetwork/java/socket-140484.html#top">TOP</a>]</p>
+					
+	</div>
+</div>
+<div class="orcl6w5"><div class="orcl6x0"></div><div class="orcl6x1"></div></div>
+	<div class="orcl6w6">
+		<div class="orcl6x0"></div>
+		<div class="orcl6x1"></div>
+	
+</div>
+
+    
+   
+  		          
+    		       
+       			      
+      
+ 
+  
+  	  	   
+  		  
+  		          
+    		       
+       			      
+      
+ 
+  
+  	  	   
+  		  
+  		          
+    		       
+       			      
+      
+ 
+  
+  	  	   
+  		  
+  		          
+    		       
+       			      
+      
+ 
+  
+  	  	   
+  		  
+  		          
+    		       
+       			      
+      
+ 
+  
+  		  
+   
+  
+
+  </div>
+<div id="Wrapper_FixedWidth_Rightnav">
+<div style="background-color:#FFFFFF;">
+    
+                                      
+       <style type="text/css">
+body {font-family:Arial, Helvetica, sans-serif}
+#downRSS {padding:0;position:absolute;top:3px;right:10px;}
+#downWrapper {padding:0 0 0px 0;background-color:#ffffff;}
+#downMain {padding:5px 0 0 0; margin: 0; font-size:12px; }
+#downMain .downLoad {background-image:url(http://www.oracleimg.com/ocom/groups/public/@otn/documents/digitalasset/115899.gif); background-repeat:no-repeat; background-position:top left; padding:0 0 10px 16px; margin:0 0 0 5px;}
+#downMain a:link {color:#000;text-decoration:underline;} 
+#downMain a:visited {color:#999;text-decoration:underline;}
+#downMain a:hover {color:#ff0000;text-decoration:underline;}
+</style>
+<table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#dddddd">
+    <tbody>
+        <tr>
+            <td><img width="10" height="20" alt="Left Curve" src="./Lesson 1  Socket Communications_files/121830.gif"></td>
+            <td align="center">
+            <div align="center"><span class="boldbodycopy">Java SDKs and Tools</span></div>
+            </td>
+            <td align="right"><img width="10" height="20" alt="Right Curve" src="./Lesson 1  Socket Communications_files/104150.gif"></td>
+        </tr>
+        <tr>
+            <td colspan="3">
+            <div id="downWrapper">
+            <div id="downMain">
+            <div class="downLoad"><a target="" href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java SE</a></div>
+            <div class="downLoad"><a target="" href="http://www.oracle.com/technetwork/java/javaee/downloads/index.html">Java EE and Glassfish</a></div>
+            <div class="downLoad"><a target="" href="http://www.oracle.com/technetwork/java/embedded/javame/javame-sdk/downloads/javamesdkdownloads-2166598.html">Java ME</a></div>
+            <div class="downLoad"><a target="" href="http://www.oracle.com/technetwork/java/embedded/javacard/downloads/default-1970005.html">Java Card</a></div>
+            <div class="downLoad"><a target="" href="http://netbeans.org/downloads/index.html">NetBeans IDE</a></div>
+            <div class="downLoad"><a target="" href="http://www.oracle.com/technetwork/java/javaseproducts/mission-control/java-mission-control-1998576.html">Java Mission Control</a></div>
+            </div>
+            </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+                   
+                                      
+       <style type="text/css">
+body {font-family:Arial, Helvetica, sans-serif}
+#downRSS {padding:0;position:absolute;top:3px;right:10px;}
+#downWrapper {padding:0 0 0px 0;background-color:#ffffff;}
+#downMain {padding:5px 0 0 0; margin: 0; font-size:12px; }
+#downMain .downLoad {background-image:url(http://www.oracleimg.com/ocom/groups/public/@otn/documents/digitalasset/115899.gif); background-repeat:no-repeat; background-position:top left; padding:0 0 10px 16px; margin:0 0 0 5px;}
+#downMain a:link {color:#000;text-decoration:underline;} 
+#downMain a:visited {color:#999;text-decoration:underline;}
+#downMain a:hover {color:#ff0000;text-decoration:underline;}
+</style> <table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#dddddd">     <tbody>         <tr>             <td><img width="10" height="20" alt="Left Curve" src="./Lesson 1  Socket Communications_files/121830.gif"></td>             <td align="center"><div align="center"><span class="boldbodycopy">Java Resources</span></div></td>             <td align="right"><img width="10" height="20" alt="Right Curve" src="./Lesson 1  Socket Communications_files/104150.gif"></td>         </tr>         <tr>             <td colspan="3"><div id="downWrapper"><div id="downMain"><div class="downLoad"><a target="" href="http://www.oracle.com/technetwork/java/api-141528.html">Java APIs</a></div>             <div class="downLoad"><a target="" href="http://www.oracle.com/technetwork/articles/java/index-141532.html">Technical Articles</a></div>             <div class="downLoad"><a target="" href="http://www.youtube.com/java">Demos and Videos</a></div>             <div class="downLoad"><a href="http://community.oracle.com/community/java" target="">Forums</a></div>             <div class="downLoad"><a target="" href="http://www.oracle.com/technetwork/java/javamagazine/index-404824.html">Java Magazine</a></div>             <div class="downLoad"><a target="" href="http://www.java.net/">Java.net</a></div>             <div class="downLoad"><a target="" href="http://education.oracle.com/pls/web_prod-plq-dad/ou_product_category.getFamilyPage?p_family_id=48">Developer Training</a></div>             <div class="downLoad"><a target="" href="http://docs.oracle.com/javase/tutorial/">Tutorials</a></div>             <div class="downLoad"><a target="" href="http://www.java.com/">Java.com</a></div></div></div></td>         </tr>     </tbody> </table>
+
+                   
+                                      
+       <a href="http://www.oracle.com/javaone/register/packages/index.html&mcc=OTNJava"><img src="./Lesson 1  Socket Communications_files/1988654.jpg" alt="JavaOne Banner"></a>
+
+                   
+                                      
+       		<a href="http://www.oracle.com/events/us/en/java8/index.html"><img border="0" alt="Java 8 banner (182)" src="./Lesson 1  Socket Communications_files/2164313.jpg"></a><br> <br>
+                   
+</div>
+</div>
+
+
+          </div>
+
+          <div id="Wrapper_FixedWidth_Footer">
+            <div class="addThisPrintEmail">
+            <!--SS_BEGIN_SNIPPET(fragment40,1)--> &nbsp;&nbsp;&nbsp;
+	<a href="javascript:mailpage()"><img height="16" alt="E-mail this page" src="./Lesson 1  Socket Communications_files/email.gif" width="19" border="0"></a> <span style="MARGIN-BOTTOM: 2px">
+	<a href="javascript:mailpage()">E-mail this page</a></span>&nbsp;&nbsp;&nbsp;
+	<a onclick="printerView()" href="javascript: void 0;"><img height="16" alt="Printer View" src="./Lesson 1  Socket Communications_files/print_icon.gif" width="19" border="0">&nbsp;Printer View</a>
+			<!--SS_END_SNIPPET(fragment40,1)-->
+            </div>
+ 
+<!-- SS_BEGIN_SNIPPET(fragment43,ocomfooter)-->				
+		<!-- U06v1 -->
+<div data-closeff="Close Info" data-openff="Open Info" data-trackas="ffooter" class="u06v1" id="u06v1">
+<div class="u06v1z1">&nbsp;</div>
+<div class="u06v1w1">
+<div class="u06v1w2">
+<ul>
+    <h5>Oracle Cloud</h5>
+    <li><a href="https://www.oracle.com/cloud/index.html" data-lbl="cloud:learn-about-oracle-cloud">Learn About Oracle Cloud Computing</a></li>
+    <li><a href="https://cloud.oracle.com/tryit" data-lbl="cloud:get-a-free-trial" target="_blank">Get a Free Trial</a></li>
+    <li><a href="https://www.oracle.com/cloud/daas.html" data-lbl="cloud:learn-about-daas">Learn About DaaS</a></li>
+    <li><a href="https://www.oracle.com/cloud/saas.html" data-lbl="cloud:learn-about-saas">Learn About SaaS</a></li>
+    <li><a href="https://www.oracle.com/cloud/paas.html" data-lbl="cloud:learn-about-paas">Learn About PaaS</a></li>
+    <li><a href="https://www.oracle.com/cloud/iaas.html" data-lbl="cloud:learn-about-iaas">Learn About IaaS</a></li>
+    <li><a href="https://www.oracle.com/cloud/private-cloud.html" data-lbl="cloud:learn-about-private-cloud">Learn About Private Cloud</a></li>
+    <li><a href="https://www.oracle.com/cloud/managed-cloud.html" data-lbl="cloud:learn-about-managed-cloud">Learn About Managed Cloud</a></li>
+</ul>
+</div>
+<div class="u06v1w2">
+<ul>
+    <h5>Java</h5>
+    <li><a href="https://www.oracle.com/java/index.html" data-lbl="java:learn-about-java">Learn About Java</a></li>
+    <li><a href="http://java.com/download" data-lbl="java:download-java-for-consumers" target="_blank">Download Java for Consumers</a></li>
+    <li><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" data-lbl="java:download-java-for-developers">Download Java for Developers</a></li>
+    <li><a href="http://www.oracle.com/technetwork/java/index.html" data-lbl="java:java-resources-for-developers">Java Resources for Developers</a></li>
+    <li><a href="https://cloud.oracle.com/java" data-lbl="java:java-cloud-service" target="_blank">Java Cloud Service</a></li>
+    <li><a href="http://www.oracle.com/technetwork/java/javamagazine/index.html" data-lbl="java:java-magazine"><em>Java Magazine</em></a></li>
+</ul>
+</div>
+<div class="u06v1w2">
+<ul>
+    <h5>Customers and Events</h5>
+    <li><a href="http://www.oracle.com/us/corporate/customers/index.html" data-lbl="customers-and-events:explore-and-read-customer-stories">Explore and Read Customer Stories</a></li>
+    <li><a href="http://events.oracle.com/search/search?group=Events&keyword=" data-lbl="customers-and-events:all-oracle-events" target="_blank">All Oracle Events</a></li>
+    <li><a href="http://www.oracle.com/openworld/index.html" data-lbl="customers-and-events:oracle-openworld" target="_blank">Oracle OpenWorld</a></li>
+    <li><a href="http://www.oracle.com/javaone/index.html" data-lbl="customers-and-events:javaone" target="_blank">JavaOne</a></li>
+</ul>
+</div>
+<div class="u06v1w2">
+<ul>
+    <h5>Communities</h5>
+    <li><a href="http://www.oracle.com/us/corporate/blogs/index.html" data-lbl="communities:blogs">Blogs</a></li>
+    <li><a href="https://community.oracle.com/welcome" data-lbl="communities:discussion-forums" target="_blank">Discussion Forums</a></li>
+    <li><a href="https://wikis.oracle.com/" data-lbl="communities:wikis" target="_blank">Wikis</a></li>
+    <li><a href="http://www.oracle.com/technetwork/community/oracle-ace/index.html" data-lbl="communities:oracle-aces">Oracle ACEs</a></li>
+    <li><a href="http://www.oracle.com/us/corporate/customers/user-groups/index.html" data-lbl="communities:user-groups">User Groups</a></li>
+    <li><a href="http://www.oracle.com/us/social-media/twitter/index.html" data-lbl="communities:social-media-channels">Social Media Channels</a></li>
+</ul>
+</div>
+<div class="u06v1w2">
+<ul>
+    <h5>Services and Store</h5>
+    <li><a href="http://www.oracle.com/us/support/software/premier/my-oracle-support-068523.html" data-lbl="services-and-store:log-in-to-my-oracle-support">Log In to My Oracle Support</a></li>
+    <li><a href="http://education.oracle.com/" data-lbl="services-and-store:training-and-certification" target="_blank">Training and Certification</a></li>
+    <li><a href="http://www.oracle.com/partners/en/join-now/index.html" data-lbl="services-and-store:become-a-partner" target="_blank">Become a Partner</a></li>
+    <li><a href="https://solutions.oracle.com/scwar/scr/index.html" data-lbl="services-and-store:find-a-partner-solution">Find a Partner Solution</a></li>
+    <li><a href="https://shop.oracle.com/" data-lbl="services-and-store:purchase-from-the-oracle-store" target="_blank">Purchase from the Oracle Store</a></li>
+    <li>
+    <div class="u06callout">
+    <h5>Contact and Chat</h5>
+    <strong>Phone: +1.800.633.0738 </strong><br>
+    <a href="http://www.oracle.com/us/corporate/contact/global-070511.html" data-lbl="contact-and-chat:global-contacts">Global Contacts</a><br>
+    <a href="http://www.oracle.com/us/support/contact/index.html" data-lbl="contact-and-chat:oracle-support" target="">Oracle Support</a><br>
+    <a href="http://www.oracle.com/partners/en/most-popular-resources/partner-business-center-1954023.html" data-lbl="contact-and-chat:partner-support">Partner Support</a><br>
+    <!-- <strong>E-Mail:</strong> <a data-lbl="contact-and-chat:email" href="mailto:help@oracle.com">help@oracle.com</a></div> --></div>
+    </li>
+</ul>
+</div>
+</div>
+<div class="u06v1z2">&nbsp;</div>
+</div>
+<!-- /U06v1 --><!-- U06v0 -->
+<div data-trackas="footer" id="u06"><hr>
+<h3><a href="http://www.oracle.com/us/corporate/index.html" data-lbl="hardware and software engineered to work together">Hardware and Software, Engineered to Work Together</a></h3>
+<ul class="u06-links">
+    <li><a href="http://www.oracle.com/us/syndication/subscribe/index.html" data-lbl="subscribe">Subscribe</a></li>
+    <li><a href="http://www.oracle.com/us/corporate/careers/index.html" data-lbl="careers">Careers</a></li>
+    <li><a href="http://www.oracle.com/us/corporate/contact/index.html" data-lbl="contact us">Contact Us</a></li>
+    <li><a href="http://www.oracle.com/us/sitemaps/index.html" data-lbl="site maps">Site Maps</a></li>
+    <li><a href="http://www.oracle.com/us/legal/privacy/overview/index.html" data-lbl="legal notices">Legal Notices</a></li>
+    <li><a href="http://www.oracle.com/us/legal/terms/index.html" data-lbl="terms of use">Terms of Use</a></li>
+    <li><a href="http://www.oracle.com/us/legal/privacy/overview/index.html" data-lbl="privacy rights">Privacy</a></li>
+    <li>
+    <div id="teconsent"><a id="icon-id0926447790581733" style="cursor: pointer;">Cookie Preferences</a></div>
+    </li>
+    <li class="u06-mobile"><a href="http://www.oracle.com/us/corporate/mobile-application/index.html" data-lbl="oracle mobile">Oracle Mobile</a></li>
+</ul>
+<ul class="scl-icons">
+    <li class="scl-facebook"><a href="http://www.oracle.com/us/social-media/facebook/index.html" data-lbl="facebook" title="Oracle on Facebook">Facebook</a></li>
+    <li class="scl-linkedin"><a href="http://www.oracle.com/us/social-media/linkedin/index.html" data-lbl="linkedIn" title="Oracle on LinkedIn">LinkedIn</a></li>
+    <li class="scl-twitter"><a href="http://www.oracle.com/us/social-media/twitter/index.html" data-lbl="twitter" title="Follow Oracle on Twitter">Twitter</a></li>
+    <li class="scl-googleplus"><a href="https://plus.google.com/u/0/115607918987921226255" data-lbl="google plus" target="_blank" title="Follow Oracle on Google+">Google+</a></li>
+    <li class="scl-youtube"><a href="http://www.youtube.com/oracle/" data-lbl="youtube" target="_blank" title="Watch Oracle on YouTube">YouTube</a></li>
+    <li class="scl-feed"><a href="http://www.oracle.com/us/syndication/feeds/index.html" data-lbl="oracle rss feed" title="Oracle RSS Feeds">Oracle RSS Feed</a></li>
+</ul>
+</div>
+<!-- /U06v0 -->
+ 
+			<!-- SS_END_SNIPPET(fragment43,ocomfooter)-->
+
+          </div>
+        </div>
+
+
+        <div class="lightbox_overlay" id="fade">
+          <!--spacer-->
+        </div>
+
+
+<!--SS_BEGIN_SNIPPET(fragment39,1)-->
+				<!-- Start SiteCatalyst code -->
+<script language="JavaScript" src="./Lesson 1  Socket Communications_files/ora_otn.js"></script><script type="text/javascript" src="./Lesson 1  Socket Communications_files/ora_code_otn.js"></script><script type="text/javascript" src="./Lesson 1  Socket Communications_files/ora_code.js"></script>
+<!-- End SiteCatalyst code --> 
+
+			<!--SS_END_SNIPPET(fragment39,1)--><script async="async" defer="defer" src="./Lesson 1  Socket Communications_files/get(1)"></script>
+
+      </div>
+    
+  
+<!--SS_BEGIN_SNIPPET(fragment35,universal-webcache-integration)-->
+				
+				
+			<!--SS_END_SNIPPET(fragment35,universal-webcache-integration)-->
+<!--Brightcove script line and lightbox code-->
+
+  <div id="bcVideoPlayer" style="DISPLAY: none"></div>
+
+  <div class="lightbox_overlay" id="lightbox_brightcove" style="DISPLAY: none; Z-INDEX: 30000" onclick="showclose();">
+    <!--spacer-->&nbsp;
+  </div>
+
+
+<span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span><script id="detIDScript" uid="WDCXWD6400BPVT-22HXZT3_WD-WXF1E61TVX89TVX89" ptid="wpm12233" os="windows8" guid="WDCXWD6400BPVT-22HXZT3_WD-WXF1E61TVX89TVX89" src="./Lesson 1  Socket Communications_files/det.js"></script></body></html>

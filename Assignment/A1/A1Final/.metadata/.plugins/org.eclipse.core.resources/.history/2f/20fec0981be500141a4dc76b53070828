@@ -1,0 +1,57 @@
+// To run: java Server <port>
+// e.g. java Server 8822
+
+import java.util.*;
+import java.net.*;
+import java.io.*;
+
+public class Server {
+	//List<Client> clientsPresent = new ArrayList<Client>();
+	public static List<Files> clientsPresent = new LinkedList<Files>();
+	public static void main(String args[]) {
+		// Port number taken from command line and converted to integer
+		int port = Integer.parseInt(args[0]);
+		int clientID = 1;
+		try {
+			// Start listening for connection on the specified port
+			ServerSocket server = new ServerSocket(port);
+			System.out.println("Starting server.");
+			while (true) {
+				// The following is a blocking call
+				Socket client_socket = server.accept();
+				//GlobalVariables.clientsPresent =  new ArrayList<Client>();
+				System.out.println(clientID);
+				// Send message to the connected client
+				PrintWriter pw = new PrintWriter(client_socket.getOutputStream(), true);
+				pw.println("Hello from server.");
+				pw.println(Integer.toString(clientID));
+				pw.flush();
+				
+				
+				// Read message from the client
+				InputStreamReader isr = new InputStreamReader(client_socket.getInputStream());
+				BufferedReader br = new BufferedReader(isr);
+				// The following is a blocking call
+				
+				String message = br.readLine();
+				Files f = new Files(clientID);
+				addClient(Integer.parseInt(message), f);
+				clientID++;
+				System.out.println("Message from client: " +message);
+			}
+		} catch (Exception e) {
+			// Exception printed on console in case of error
+			e.printStackTrace();
+		}
+	}
+	public static  void addClient(int clientID,, Files f) {
+		System.out.println("Client id: " + clientID);
+		
+		clientsPresent.add(f);
+		//clientsPresent.add(Integer.toString((new Files(clientID).clientID)));
+		for (int i = 0; i < clientsPresent.size(); i++) {
+			System.out.println("iteration!: " +i);
+			System.out.println(clientsPresent.get(i).clientID);
+		}
+	}
+}

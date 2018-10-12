@@ -1,0 +1,47 @@
+// To run: java Client <IP> <port>
+// e.g. java Client localhost 8822
+
+import java.util.*;
+import java.net.*;
+import java.io.*;
+
+public class Client {
+	List<String> files;
+	static int clientID = 0;
+	Client(int id) {
+		files  = new ArrayList<String>();
+		clientID = id;
+	}
+	public static void main(String args[]) {
+		// Takes command line arguments
+		int port = Integer.parseInt(args[1]);
+		String ip = args[0];
+		int client_port = Integer.parseInt(args[2]);
+		Admin client_server = new Admin(client_port);
+		
+		try {
+			// Connect to the given IP and Port and store in the sock variable
+			Socket sock = new Socket(ip, port);
+			System.out.println("Connected to server.");
+			// Send it's listening port number to server as an unique ID
+			PrintWriter pw = new PrintWriter(sock.getOutputStream(), true);
+			pw.println(client_port);
+			pw.flush();
+			
+			// Taking input from socket
+			InputStreamReader isr = new InputStreamReader(sock.getInputStream());
+			BufferedReader br = new BufferedReader(isr);
+			
+			// The following is a blocking call
+			String input = br.readLine();
+			System.out.println(input);
+			String input1 = br.readLine();
+			System.out.println(input1);
+			
+		} catch (Exception e) {
+			// Exception printed on console in case of error
+			e.printStackTrace();
+		}
+	}
+
+}
